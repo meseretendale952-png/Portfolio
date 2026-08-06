@@ -1,121 +1,234 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Meseret Endale | CS Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- 🌐 Clean Header aligned with Page Width -->
+    <header class="header-wrapper">
+        <nav class="navbar">
+            <a href="#" class="brand-text" onclick="openTab(event, 'home')">MESERET ENDALE</a>
+            
+            <ul class="nav-links">
+                <li><a href="#" class="nav-btn active-link" onclick="openTab(event, 'home')">Home</a></li>
+                <li><a href="#" class="nav-btn" onclick="openTab(event, 'about')">About</a></li>
+                <li><a href="#" class="nav-btn" onclick="openTab(event, 'education')">Education</a></li>
+                <li><a href="#" class="nav-btn" onclick="openTab(event, 'skills')">Skills</a></li>
+                <li><a href="#" class="nav-btn" onclick="openTab(event, 'projects')">Projects</a></li>
+                <li><a href="#" class="nav-btn" onclick="openTab(event, 'contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="container">
-        <div class="profile-card">
-            <img src="profile.jpg" alt="Meseret" class="profile-img" onerror="this.src='https://via.placeholder.com/160'">
-            <h1>Meseret Endale</h1>
-            <div class="marquee">
-                <span>🚀 COMPUTER SCIENCE STUDENT | 3RD YEAR | PASSIONATE CODER | PROBLEM SOLVER 🚀</span>
+
+        <!-- 🏠 Home Section with Extra Large Dark Logo -->
+        <div id="home" class="tab-content card active">
+            
+            <!-- 🔄 Extra Large Dark Rotating Logo -->
+            <div class="hero-logo-container">
+                <div class="circular-logo-wrapper">
+                    <svg viewBox="0 0 200 200" class="circular-text-svg">
+                        <path id="textPath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" fill="none"/>
+                        <text font-size="16" font-weight="700" fill="#0f172a" letter-spacing="3">
+                            <textPath href="#textPath" startOffset="0%">
+                                MESERET ENDALE • PORTFOLIO •
+                            </textPath>
+                        </text>
+                    </svg>
+                    <img src="profile.jpg" alt="Meseret" class="inner-profile-img" onerror="this.src='https://via.placeholder.com/160'">
+                </div>
+            </div>
+
+            <div class="hero-intro">
+                <span class="badge">Welcome to my Portfolio</span>
+                <h1>Meseret Endale</h1>
+                <p class="subtitle">🚀 COMPUTER SCIENCE STUDENT | PASSIONATE CODER | PROBLEM SOLVER</p>
+                
+                <hr class="section-divider">
+                
+                <p>Welcome to my personal portfolio! I am a Computer Science student who loves building modern software, designing web platforms, and solving complex problems.</p>
+
+                <div class="quick-highlights">
+                    <div class="highlight-box">
+                        <h3>🎓 Education</h3>
+                        <p>Injibara University CS Student</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h3>💻 Tech Stack</h3>
+                        <p>Python, C++, Java, JS, Web & Networking</p>
+                    </div>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="#" class="btn primary-btn" onclick="openTab(event, 'projects')">View My Projects →</a>
+                    <a href="#" class="btn secondary-btn" onclick="openTab(event, 'contact')">Get In Touch</a>
+                </div>
             </div>
         </div>
 
-        <div class="card">
+        <!-- 👤 About Section -->
+        <div id="about" class="tab-content card">
             <h2>About Me</h2>
-            <p>I am a 3rd year Computer Science student passionate about programming and problem solving. I love building web applications and learning new technologies.</p>
+            <p>I am a dedicated Computer Science student with a strong drive for learning modern software technologies. My journey in tech spans software engineering, web application development, and system/network administration.</p>
+            
+            <div class="quick-highlights" style="margin-top: 20px;">
+                <div class="highlight-box">
+                    <h3>🎯 Core Focus</h3>
+                    <p>Building functional web applications, clean code architectures, and user-friendly solutions.</p>
+                </div>
+                <div class="highlight-box">
+                    <h3>💡 Passion & Interests</h3>
+                    <p>Exploring Artificial Intelligence, Machine Learning models, and Computer Graphics.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="card">
+        <!-- 🎓 Education Section -->
+        <div id="education" class="tab-content card">
             <h2>Education</h2>
-            <p>🎓 Computer Science, 3rd Year</p>
-            <p>📍 Injibara College</p>
+            <div class="edu-item">
+                <span class="edu-icon">🎓</span>
+                <div>
+                    <strong>Computer Science Student</strong>
+                    <p>📍 Injibara University</p>
+                </div>
+            </div>
         </div>
 
-        <div class="card">
+        <!-- 📚 Skills Section -->
+        <div id="skills" class="tab-content card">
             <h2>📚 Technical Skills</h2>
             <div class="skills-container">
                 <div class="skill-card">
-                    <span class="skill-icon">🐍</span>
-                    <div class="skill-name">Python</div>
-                    <div class="skill-level">★★★★★ <span>Expert</span></div>
+                    <div class="skill-header">
+                        <span class="skill-name">🐍 Python</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
                     <div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div>
                 </div>
                 
                 <div class="skill-card">
-                    <span class="skill-icon">⚡</span>
-                    <div class="skill-name">C++</div>
-                    <div class="skill-level">★★★★☆ <span>Advanced</span></div>
+                    <div class="skill-header">
+                        <span class="skill-name">⚡ C++</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
                     <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
                 </div>
                 
                 <div class="skill-card">
-                    <span class="skill-icon">☕</span>
-                    <div class="skill-name">Java</div>
-                    <div class="skill-level">★★★★☆ <span>Advanced</span></div>
+                    <div class="skill-header">
+                        <span class="skill-name">☕ Java</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
                     <div class="progress-bar"><div class="progress-fill" style="width: 80%"></div></div>
                 </div>
                 
                 <div class="skill-card">
-                    <span class="skill-icon">🌐</span>
-                    <div class="skill-name">HTML/CSS</div>
-                    <div class="skill-level">★★★★★ <span>Expert</span></div>
+                    <div class="skill-header">
+                        <span class="skill-name">🌐 HTML / CSS / JS</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
                     <div class="progress-bar"><div class="progress-fill" style="width: 92%"></div></div>
                 </div>
                 
                 <div class="skill-card">
-                    <span class="skill-icon">🎨</span>
-                    <div class="skill-name">Graphics</div>
-                    <div class="skill-level">★★★☆☆ <span>Intermediate</span></div>
+                    <div class="skill-header">
+                        <span class="skill-name">🎨 Computer Graphics</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
                     <div class="progress-bar"><div class="progress-fill" style="width: 65%"></div></div>
                 </div>
                 
                 <div class="skill-card">
-                    <span class="skill-icon">🧠</span>
-                    <div class="skill-name">AI / ML</div>
-                    <div class="skill-level">★★★☆☆ <span>Learning</span></div>
+                    <div class="skill-header">
+                        <span class="skill-name">🧠 AI & Machine Learning</span>
+                        <span class="skill-level">Learning</span>
+                    </div>
                     <div class="progress-bar"><div class="progress-fill" style="width: 60%"></div></div>
                 </div>
             </div>
-            <div style="margin-top: 15px; text-align: center; color: #aaa; font-size: 13px;">
-                🚀 Currently learning: Advanced AI & Cloud Computing
+        </div>
+
+        <!-- 💻 Projects Section -->
+        <div id="projects" class="tab-content card">
+            <h2>💻 Featured Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>🧮 Interactive Calculator</h3>
+                    <p>A responsive web calculator built with custom UI and pure JavaScript logic.</p>
+                    <a href="calculator.html" class="btn primary-btn" style="padding: 8px 14px; font-size: 0.85rem;">Try it Live →</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>🏥 Symptom Checker</h3>
+                    <p>An interactive system designed for basic health assessment and medical advice.</p>
+                    <a href="symptom-checker.html" class="btn primary-btn" style="padding: 8px 14px; font-size: 0.85rem;">Try it Live →</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>📢 Job Board App</h3>
+                    <p>A job listing application featuring location-based filtering for job seekers.</p>
+                    <a href="jobs-location.html" class="btn primary-btn" style="padding: 8px 14px; font-size: 0.85rem;">Try it Live →</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>🌐 Personal Portfolio</h3>
+                    <p>A modern, responsive developer portfolio website.</p>
+                    <span class="btn-disabled">Active Project</span>
+                </div>
             </div>
         </div>
 
-        <div class="card">
-            <h2>Projects</h2>
-            <div class="project-item">
-                <strong>🧮 Simple Calculator</strong>
-                <div>Interactive web calculator - <a href="calculator.html">Try it Live</a></div>
-            </div>
-            <div class="project-item">
-                <strong>🏥 Simple Symptom Checker</strong>
-                <div>Medical advice system - <a href="symptom-checker.html">Try it Live</a></div>
-            </div>
-            <div class="project-item">
-                <strong>📢 Job Board - Location Filter</strong>
-                <div>Post and find jobs by location - <a href="jobs-location.html">Try it Live</a></div>
-            </div>
-            <div class="project-item">
-                <strong>🌐 Portfolio Website</strong>
-                <div>Personal portfolio with HTML & CSS</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>Contact</h2>
-            <div class="contact-item">
-                <span>📧</span>
-                <a href="mailto:meseretendale952@gmail.com">meseretendale952@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <span>💬</span>
-                <a href="https://t.me/mesi_2e">@mesi_2e</a>
-            </div>
-            <div class="contact-item">
-                <span>🐙</span>
-                <a href="https://github.com/meseretendale952-png">github.com/meseretendale952-png</a>
+        <!-- 📬 Contact Section -->
+        <div id="contact" class="tab-content card">
+            <h2>📫 Connect With Me</h2>
+            <div class="contact-links">
+                <a href="mailto:meseretendale952@gmail.com" class="contact-item">
+                    <span class="contact-icon">📧</span> meseretendale952@gmail.com
+                </a>
+                <a href="https://t.me/mesi_2e" target="_blank" class="contact-item">
+                    <span class="contact-icon">💬</span> @mesi_2e
+                </a>
+                <a href="https://github.com/meseretendale952-png" target="_blank" class="contact-item">
+                    <span class="contact-icon">🐙</span> github.com/meseretendale952-png
+                </a>
             </div>
         </div>
 
         <div class="footer">
-            <p>© 2025 Meseret Endale | Computer Science Student</p>
+            <p>© 2026 Meseret Endale | Computer Science Student</p>
         </div>
     </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            if (evt) evt.preventDefault();
+            
+            var contents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove("active");
+            }
+
+            var links = document.getElementsByClassName("nav-btn");
+            for (var i = 0; i < links.length; i++) {
+                links[i].classList.remove("active-link");
+            }
+
+            document.getElementById(tabName).classList.add("active");
+            
+            for (var i = 0; i < links.length; i++) {
+                if (links[i].getAttribute("onclick").includes("'" + tabName + "'")) {
+                    links[i].classList.add("active-link");
+                }
+            }
+        }
+    </script>
+
 </body>
 </html>
