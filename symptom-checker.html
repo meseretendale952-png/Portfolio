@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Symptom Checker - Meseret</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 550px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .symptom-box {
+            margin: 20px 0;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        select, input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        .result {
+            background: #f0f2f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 25px;
+            display: none;
+        }
+        .result.show {
+            display: block;
+        }
+        .advice {
+            color: #333;
+            line-height: 1.6;
+        }
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+        .back-link {
+            text-align: center;
+            margin-top: 25px;
+        }
+        .back-link a {
+            color: #667eea;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🏥 Simple Symptom Checker</h2>
+        <p style="text-align: center; color: #666;">⚠️ This is for educational purposes only</p>
+
+        <div class="symptom-box">
+            <label>Select your main symptom:</label>
+            <select id="symptom">
+                <option value="">-- Choose symptom --</option>
+                <option value="fever">🤒 Fever</option>
+                <option value="headache">🤕 Headache</option>
+                <option value="cough">😷 Cough</option>
+                <option value="stomach">🤢 Stomach pain</option>
+                <option value="cold">🤧 Cold / Runny nose</option>
+                <option value="sorethroat">😖 Sore throat</option>
+            </select>
+        </div>
+
+        <button onclick="checkSymptom()">Get Advice</button>
+
+        <div id="result" class="result">
+            <div id="adviceText" class="advice"></div>
+            <div class="warning">
+                ⚠️ <strong>Disclaimer:</strong> This is not medical advice. Always consult a doctor.
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="https://meseretendale952-png.github.io/Portfolio">← Back to Portfolio</a>
+        </div>
+    </div>
+
+    <script>
+        function checkSymptom() {
+            let symptom = document.getElementById('symptom').value;
+            let resultDiv = document.getElementById('result');
+            let adviceText = document.getElementById('adviceText');
+
+            let advice = '';
+
+            if(symptom === 'fever') {
+                advice = '💡 <strong>Advice for Fever:</strong><br><br>• Rest and drink plenty of water<br>• Take paracetamol if needed<br>• Use cool compress<br>• See doctor if fever lasts >3 days or is very high';
+            }
+            else if(symptom === 'headache') {
+                advice = '💡 <strong>Advice for Headache:</strong><br><br>• Rest in a dark, quiet room<br>• Drink water (dehydration causes headaches)<br>• Apply cold compress to forehead<br>• See doctor if severe or persistent';
+            }
+            else if(symptom === 'cough') {
+                advice = '💡 <strong>Advice for Cough:</strong><br><br>• Drink warm fluids (tea, soup)<br>• Use honey in warm water<br>• Rest and avoid cold<br>• See doctor if persists >1 week';
+            }
+            else if(symptom === 'stomach') {
+                advice = '💡 <strong>Advice for Stomach Pain:</strong><br><br>• Eat light, bland food<br>• Drink clear fluids<br>• Avoid spicy/oily food<br>• See doctor if severe or persistent';
+            }
+            else if(symptom === 'cold') {
+                advice = '💡 <strong>Advice for Cold:</strong><br><br>• Rest and stay warm<br>• Drink warm fluids<br>• Use saline nasal spray<br>• Wash hands frequently';
+            }
+            else if(symptom === 'sorethroat') {
+                advice = '💡 <strong>Advice for Sore Throat:</strong><br><br>• Gargle warm salt water<br>• Drink warm tea with honey<br>• Rest your voice<br>• See doctor if severe';
+            }
+            else {
+                advice = '⚠️ Please select a symptom from the list above.';
+            }
+
+            adviceText.innerHTML = advice;
+            resultDiv.classList.add('show');
+        }
+    </script>
+</body>
+</html>

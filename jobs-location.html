@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Board - Meseret</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .header {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        h1 {
+            color: #333;
+        }
+        .filter-card, .form-card, .jobs-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+            padding-left: 12px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .job-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border-left: 3px solid #667eea;
+        }
+        .job-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .job-company {
+            color: #667eea;
+            margin: 5px 0;
+        }
+        .job-location {
+            color: #48bb78;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+        .delete-btn {
+            background: #f56565;
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+        .filter-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .filter-row select {
+            flex: 1;
+        }
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-link a {
+            color: white;
+            text-decoration: none;
+        }
+        .no-jobs {
+            color: #999;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📢 Job Board Ethiopia</h1>
+            <p>Post and find jobs across Ethiopia</p>
+        </div>
+
+        <!-- Post Job Form -->
+        <div class="form-card">
+            <h2>➕ Post a New Job</h2>
+            <input type="text" id="jobTitle" placeholder="Job Title (e.g., Web Developer)">
+            <input type="text" id="company" placeholder="Company Name">
+            <select id="location">
+                <option value="">Select Location</option>
+                <option value="Addis Ababa">🏙️ Addis Ababa</option>
+                <option value="Debre Markos">📍 Debre Markos</option>
+                <option value="Bahir Dar">🌊 Bahir Dar</option>
+                <option value="Gondar">🏰 Gondar</option>
+                <option value="Hawassa">🌳 Hawassa</option>
+                <option value="Dire Dawa">🏢 Dire Dawa</option>
+                <option value="Mekelle">⛰️ Mekelle</option>
+                <option value="Jimma">🍎 Jimma</option>
+                <option value="Other">📍 Other</option>
+            </select>
+            <textarea id="description" rows="3" placeholder="Job Description..."></textarea>
+            <button onclick="addJob()">Post Job</button>
+        </div>
+
+        <!-- Filter by Location -->
+        <div class="filter-card">
+            <h2>🔍 Filter by Location</h2>
+            <div class="filter-row">
+                <select id="filterLocation">
+                    <option value="all">All Locations</option>
+                    <option value="Addis Ababa">🏙️ Addis Ababa</option>
+                    <option value="Debre Markos">📍 Debre Markos</option>
+                    <option value="Bahir Dar">🌊 Bahir Dar</option>
+                    <option value="Gondar">🏰 Gondar</option>
+                    <option value="Hawassa">🌳 Hawassa</option>
+                    <option value="Dire Dawa">🏢 Dire Dawa</option>
+                    <option value="Mekelle">⛰️ Mekelle</option>
+                    <option value="Jimma">🍎 Jimma</option>
+                </select>
+                <button onclick="filterJobs()">Search</button>
+                <button onclick="resetFilter()">Reset</button>
+            </div>
+        </div>
+
+        <!-- Jobs List -->
+        <div class="jobs-card">
+            <h2>📋 Available Jobs</h2>
+            <div id="jobsList"></div>
+        </div>
+
+        <div class="back-link">
+            <a href="https://meseretendale952-png.github.io/Portfolio">← Back to Portfolio</a>
+        </div>
+    </div>
+
+    <script>
+        let jobs = [];
+        let currentFilter = 'all';
+
+        function loadJobs() {
+            let saved = localStorage.getItem('jobBoardLocation');
+            if(saved) {
+                jobs = JSON.parse(saved);
+            } else {
+                // Sample jobs for Debre Markos
+                jobs = [
+                    {title: "IT Support", company: "Debre Markos University", location: "Debre Markos", desc: "Looking for IT support staff"},
+                    {title: "Web Developer", company: "Tech Solutions", location: "Addis Ababa", desc: "HTML/CSS/JS developer needed"},
+                    {title: "Network Admin", company: "Ethio Telecom", location: "Debre Markos", desc: "Network administration"}
+                ];
+                saveJobs();
+            }
+            filterJobs();
+        }
+
+        function saveJobs() {
+            localStorage.setItem('jobBoardLocation', JSON.stringify(jobs));
+        }
+
+        function displayJobs(filteredJobs) {
+            let jobsList = document.getElementById('jobsList');
+            jobsList.innerHTML = '';
+            
+            if(filteredJobs.length === 0) {
+                jobsList.innerHTML = '<div class="no-jobs">❌ No jobs found in this location</div>';
+                return;
+            }
+            
+            for(let i = 0; i < jobs.length; i++) {
+                if(currentFilter !== 'all' && jobs[i].location !== currentFilter) {
+                    continue;
+                }
+                jobsList.innerHTML += `
+                    <div class="job-item">
+                        <div class="job-title">💼 ${jobs[i].title}</div>
+                        <div class="job-company">🏢 ${jobs[i].company}</div>
+                        <div class="job-location">📍 ${jobs[i].location}</div>
+                        <div class="job-desc">📝 ${jobs[i].desc}</div>
+                        <button class="delete-btn" onclick="deleteJob(${i})">Delete</button>
+                    </div>
+                `;
+            }
+        }
+
+        function filterJobs() {
+            let filter = document.getElementById('filterLocation').value;
+            currentFilter = filter;
+            
+            let filtered = jobs.filter(job => {
+                if(filter === 'all') return true;
+                return job.location === filter;
+            });
+            
+            let jobsList = document.getElementById('jobsList');
+            jobsList.innerHTML = '';
+            
+            if(filtered.length === 0) {
+                jobsList.innerHTML = '<div class="no-jobs">❌ No jobs found in ' + filter + '</div>';
+                return;
+            }
+            
+            for(let i = 0; i < jobs.length; i++) {
+                if(currentFilter !== 'all' && jobs[i].location !== currentFilter) {
+                    continue;
+                }
+                jobsList.innerHTML += `
+                    <div class="job-item">
+                        <div class="job-title">💼 ${jobs[i].title}</div>
+                        <div class="job-company">🏢 ${jobs[i].company}</div>
+                        <div class="job-location">📍 ${jobs[i].location}</div>
+                        <div class="job-desc">📝 ${jobs[i].desc}</div>
+                        <button class="delete-btn" onclick="deleteJob(${i})">Delete</button>
+                    </div>
+                `;
+            }
+        }
+
+        function resetFilter() {
+            document.getElementById('filterLocation').value = 'all';
+            currentFilter = 'all';
+            filterJobs();
+        }
+
+        function addJob() {
+            let title = document.getElementById('jobTitle').value;
+            let company = document.getElementById('company').value;
+            let location = document.getElementById('location').value;
+            let desc = document.getElementById('description').value;
+            
+            if(title === '' || company === '' || location === '' || desc === '') {
+                alert('Please fill all fields!');
+                return;
+            }
+            
+            jobs.push({title: title, company: company, location: location, desc: desc});
+            saveJobs();
+            filterJobs();
+            
+            document.getElementById('jobTitle').value = '';
+            document.getElementById('company').value = '';
+            document.getElementById('location').value = '';
+            document.getElementById('description').value = '';
+        }
+
+        function deleteJob(index) {
+            jobs.splice(index, 1);
+            saveJobs();
+            filterJobs();
+        }
+
+        loadJobs();
+    </script>
+</body>
+</html>
