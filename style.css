@@ -1,11 +1,11 @@
 :root {
-    --bg-color: #fff7ed;
-    --card-bg: #fffaf5;
-    --text-main: #431407;
-    --text-muted: #9a5b3f;
-    --accent-color: #f97316;
-    --accent-dark: #c2410c;
-    --accent-gradient: linear-gradient(135deg, #f97316 0%, #db2777 50%, #7e22ce 100%);
+    --bg-color: #ffffff;
+    --card-bg: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --accent-color: #2563eb;
+    --accent-dark: #0f172a;
+    --accent-gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
 }
 
 * {
@@ -17,8 +17,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(180deg, #fed7aa 0%, #fdba74 25%, #fb923c 50%, #f97316 75%, #7c2d92 100%);
-    background-attachment: fixed;
+    background-color: #ffffff;
     color: var(--text-main);
     line-height: 1.7;
     padding-top: 80px;
@@ -31,10 +30,10 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(194, 65, 12, 0.92);
+    background: rgba(52, 76, 212, 0.95);
     backdrop-filter: blur(12px);
     z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.15);
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .navbar {
@@ -98,7 +97,7 @@ body {
 }
 
 .card {
-    background: rgba(255, 250, 245, 0.85);
+    background: #ffffff;
     border-radius: 0;
     border: none;
     box-shadow: none;
