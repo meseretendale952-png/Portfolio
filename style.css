@@ -17,14 +17,15 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: red; 
-    color: #ffffff;
+    /* የፀሐይ መውጫ አይነት ውብ ከለር */
+    background: linear-gradient(180deg, #FFDEE9 0%, #B5FFFC 100%);
+    color: #334155; /* ጽሁፉ በግልጽ እንዲታይ ጥቁር ሰማያዊ */
     line-height: 1.7;
     padding-top: 80px;
     width: 100%;
     overflow-x: hidden;
+    min-height: 100vh; /* ገጹ ሙሉ ስክሪን እንዲሸፍን */
 }
-
 .header-wrapper {
     position: fixed;
     top: 0;
