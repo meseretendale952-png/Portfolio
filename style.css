@@ -17,7 +17,7 @@
 body, html {
     font-family: 'Poppins', sans-serif;
     /* የፈለግሽው የፀሐይ መውጫ ምስል */
-    background-image: url('https://img.magnific.com/premium-vector/abstract-pastel-coloured-sunset-landscape-background_1048-20584.jpg?semt=ais_hybrid&w=740&q=80') !important;
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/081/998/020/small_2x/sunrise-scene-with-gradient-sky-and-yellow-sun-digital-illustration-vector.jpg) !important;
     background-size: cover;          /* ምስሉ መላውን ገጽ እንዲሸፍን */
     background-position: center;     /* ምስሉ መሀል ላይ እንዲሆን */
     background-attachment: fixed;    /* ስክሮል ስታደርጊ ምስሉ እንዳይንቀሳቀስ */
