@@ -17,7 +17,7 @@
 body, html {
     font-family: 'Poppins', sans-serif;
     /* እዚህ ጋር ያገኘሽውን የምስል ሊንክ አስገቢ */
-    background-image: url('https://img.magnific.com/premium-vector/abstract-pastel-coloured-sunset-landscape-background_1048-20584.jpg?semt=ais_hybrid&w=740&q=80') !important;
+    background-image: url(https://img.magnific.com/premium-vector/abstract-pastel-coloured-sunset-landscape-background_1048-20584.jpg?semt=ais_hybrid&w=740&q=80) !important;
     background-size: cover;          /* ምስሉ መላውን ስክሪን እንዲሸፍን */
     background-position: center;     /* ምስሉ መሀል ላይ እንዲሆን */
     background-attachment: fixed;    /* ስክሮል ስታደርጊ ምስሉ እንዳይንቀሳቀስ */
