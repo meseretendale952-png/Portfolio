@@ -14,17 +14,17 @@
     padding: 0;
     transition: all 0.3s ease;
 }
-
-body {
+/* መላውን የገጽ ዳራ እና መሀሉን ክፍሎች ሙሉ በሙሉ ለመቀየር */
+body, html {
     font-family: 'Poppins', sans-serif;
-    /* የፀሐይ መውጫ አይነት ውብ ከለር */
-    background: linear-gradient(180deg, #FFDEE9 0%, #B5FFFC 100%);
-    color: #334155; /* ጽሁፉ በግልጽ እንዲታይ ጥቁር ሰማያዊ */
+    background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%) !important;
+    color: #1e293b;
     line-height: 1.7;
-    padding-top: 80px;
+    margin: 0;
+    padding: 0;
     width: 100%;
+    min-height: 100vh;
     overflow-x: hidden;
-    min-height: 100vh; /* ገጹ ሙሉ ስክሪን እንዲሸፍን */
 }
 .header-wrapper {
     position: fixed;
