@@ -16,8 +16,8 @@
 }
 body, html {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
-    color: #f8fafc !important;
+    background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%) !important;
+    color: #1e293b !important;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -35,10 +35,9 @@ body, html {
 }
 
 .highlight-box, .edu-item, .skill-card, .project-card, .contact-item {
-    background: rgba(255, 255, 255, 0.05) !important;
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #f8fafc !important;
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .highlight-box h3, .skill-name, h1, h2, strong {
