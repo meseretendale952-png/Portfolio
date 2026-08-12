@@ -14,17 +14,25 @@
     padding: 0;
     transition: all 0.3s ease;
 }
-/* መላውን የገጽ ዳራ እና መሀሉን ክፍሎች ሙሉ በሙሉ ለመቀየር */
 body, html {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%) !important;
+    /* እዚህ ጋር ያገኘሽውን የምስል ሊንክ አስገቢ */
+    background-image: url(https://img.magnific.com/free-photo/3d-sunset-ocean-landscape_1048-10363.jpg?semt=ais_test_b&w=740&q=80) !important;
+    background-size: cover;          /* ምስሉ መላውን ስክሪን እንዲሸፍን */
+    background-position: center;     /* ምስሉ መሀል ላይ እንዲሆን */
+    background-attachment: fixed;    /* ስክሮል ስታደርጊ ምስሉ እንዳይንቀሳቀስ */
     color: #1e293b;
-    line-height: 1.7;
     margin: 0;
     padding: 0;
     width: 100%;
     min-height: 100vh;
-    overflow-x: hidden;
+}
+
+/* ካርዶቹን ትንሽ ግልጽ በማድረግ ምስሉ ከኋላ እንዲታይ ማድረግ */
+.card, .highlight-box, .skill-card, .project-card, .contact-item {
+    background: rgba(255, 255, 255, 0.7) !important; /* ከፊል ግልጽነት */
+    backdrop-filter: blur(10px); /* ምስሉ ከኋላው እንዲደበዝዝ */
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .header-wrapper {
     position: fixed;
