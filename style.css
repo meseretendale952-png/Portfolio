@@ -14,7 +14,6 @@
     padding: 0;
     transition: all 0.3s ease;
 }
-/* ለፖርትፎሊዮ የሚሆን ፕሮፌሽናል የቴክኖሎጂ ዳራ */
 body, html {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
