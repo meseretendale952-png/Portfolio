@@ -17,7 +17,7 @@
 body, html {
     font-family: 'Poppins', sans-serif;
     /* እዚህ ጋር ያገኘሽውን የምስል ሊንክ አስገቢ */
-    background-image: url(https://img.magnific.com/free-photo/3d-sunset-ocean-landscape_1048-10363.jpg?semt=ais_test_b&w=740&q=80) !important;
+    background-image: url(https://i.pinimg.com/originals/7e/ec/21/7eec21a696491203beb7189090738e13.jpg) !important;
     background-size: cover;          /* ምስሉ መላውን ስክሪን እንዲሸፍን */
     background-position: center;     /* ምስሉ መሀል ላይ እንዲሆን */
     background-attachment: fixed;    /* ስክሮል ስታደርጊ ምስሉ እንዳይንቀሳቀስ */
