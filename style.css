@@ -98,13 +98,19 @@ body, html {
 }
 
 .card {
-    background: #ffffff;
+    background: transparent !important; /* የካርዶቹን ነጭ ዳራ በማጥፋት የጀርባውን ከለር እንዲያሳዩ ያደርጋል */
     border-radius: 0;
     border: none;
     box-shadow: none;
     padding: 40px 8% 60px;
     width: 100%;
     min-height: calc(100vh - 80px);
+}
+
+/* የውስጥ ካርዶችም (ለምሳሌ Skills እና Projects ካርዶች) ከጀርባው ከለር ጋር እንዲዋሃዱ */
+.highlight-box, .edu-item, .skill-card, .project-card, .contact-item {
+    background: rgba(255, 255, 255, 0.6) !important; /* ለስላሳ ግልጽነት ያለው ነጭ ከለር */
+    backdrop-filter: blur(8px);
 }
 
 .hero-logo-container {
