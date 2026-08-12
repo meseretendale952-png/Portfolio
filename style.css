@@ -16,17 +16,38 @@
 }
 /* ለፖርትፎሊዮ የሚሆን ፕሮፌሽናል የቴክኖሎጂ ዳራ */
 body, html {
-    background: #0f172a !important; /* የጠቆረ ሰማያዊ */
+    font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
-    color: #f8fafc; /* ጽሁፉ ነጭ እንዲሆን */
+    color: #f8fafc !important;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-/* ካርዶችሽ እንደ መስታወት እንዲሆኑ */
-.card, .highlight-box, .skill-card, .project-card {
-    background: rgba(255, 255, 255, 0.05) !important; 
-    backdrop-filter: blur(15px);
+.card {
+    background: transparent !important;
+    border: none;
+    box-shadow: none;
+    padding: 40px 8% 60px;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+}
+
+.highlight-box, .edu-item, .skill-card, .project-card, .contact-item {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+    color: #f8fafc !important;
+}
+
+.highlight-box h3, .skill-name, h1, h2, strong {
+    color: #ffffff !important;
+}
+
+.highlight-box p, .skill-level, p {
+    color: #94a3b8 !important;
 }
 .header-wrapper {
     position: fixed;
