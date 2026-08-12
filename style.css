@@ -17,7 +17,7 @@
 
 body {
  font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%); /* ለስላሳ የፀሐይ መውጣት ከለር */
+    background: linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%); 
     color: #0f172a;
     line-height: 1.7;
     padding-top: 80px;
