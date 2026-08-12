@@ -17,7 +17,7 @@
 body, html {
     font-family: 'Poppins', sans-serif;
     /* እዚህ ጋር ያገኘሽውን የምስል ሊንክ አስገቢ */
-    background-image: url(https://i.pinimg.com/originals/7e/ec/21/7eec21a696491203beb7189090738e13.jpg) !important;
+    background-image: url(https://thumbs.dreamstime.com/b/sunset-gradient-background-sunrise-sun-bright-summer-abstract-sky-160780676.jpg) !important;
     background-size: cover;          /* ምስሉ መላውን ስክሪን እንዲሸፍን */
     background-position: center;     /* ምስሉ መሀል ላይ እንዲሆን */
     background-attachment: fixed;    /* ስክሮል ስታደርጊ ምስሉ እንዳይንቀሳቀስ */
