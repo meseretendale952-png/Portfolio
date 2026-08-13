@@ -366,6 +366,10 @@ p {
     font-size: 0.9rem;
     margin-top: 40px;
 }
+    .footer, .footer p, .footer span {
+    color: #ffffff !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* ጽሁፉ ከዳራው ጋር ጎልቶ እንዲታይ */
+}
 
 @media (max-width: 768px) {
     body {
