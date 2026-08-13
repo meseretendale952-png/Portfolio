@@ -364,24 +364,27 @@ p {
     display: flex;
     align-items: center;
     background: rgba(255, 255, 255, 0.9);
-    padding: 20px 25px;
-    border-radius: 15px;
+    padding: 15px 20px; /* ከዚህ በፊት 22px 30px ነበር፣ አሁን ቀንሰነዋል */
+    border-radius: 12px;
     text-decoration: none;
-    color: #1e293b;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* ትንሽ ለስላሳ ጥላ */
+    transition: transform 0.2s ease;
+    margin-bottom: 10px; /* በቦክሶቹ መካከል ያለውን ክፍተት ለመቆጣጠር */
 }
-
 .contact-item:hover {
     transform: translateY(-3px);
     background: #ffffff;
 }
 
 .contact-icon {
-    font-size: 2rem;
-    margin-right: 20px;
+    font-size: 1.5rem; /* አዶውን ትንሽ አሳነስነው */
+    margin-right: 15px;
 }
-
+    .contact-title {
+    font-size: 1.1rem; /* የጽሁፉን መጠን አስተካከለነው */
+    font-weight: 500;
+    color: #0f172a;
+}
 .contact-item strong {
     font-size: 1.1rem;
     color: #0f172a;
