@@ -17,7 +17,7 @@ body, html {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%) !important;
     /* እዚህ ጋር ያገኘሽውን የምስል ሊንክ አስገቢ */
-    background-image: url(https://img.magnific.com/free-photo/3d-sunset-ocean-landscape_1048-10363.jpg?semt=ais_test_b&w=740&q=80) !important;
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/060/222/586/small/a-brilliant-sun-casts-a-warm-glow-on-the-orange-sky-creating-a-beautiful-gradient-photo.jpg) !important;
     background-size: cover;          /* ምስሉ መላውን ስክሪን እንዲሸፍን */
     background-position: center;     /* ምስሉ መሀል ላይ እንዲሆን */
     background-attachment: fixed;    /* ስክሮል ስታደርጊ ምስሉ እንዳይንቀሳቀስ */
