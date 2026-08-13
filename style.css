@@ -361,29 +361,31 @@ p {
     margin: 0 auto;    /* መሃል ላይ እንዲሆኑ */
 }
 
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 220px;       /* የቦክሶቹን ስፋት በቀጥታ እንቆጣጠረዋለን */
+    margin: 20px auto;  /* መሃል ላይ እንዲሆኑ */
+}
+
 .contact-item {
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 12px 20px; /* ውፍረቱን (Height) መቀነሻ */
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px 18px; /* ውፍረቱን (Height) እና ቁመቱን እናሳንሰዋለን */
+    border-radius: 10px;
     text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.contact-item:hover {
-    transform: translateY(-2px);
-    background: #ffffff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
 }
 
 .contact-icon {
-    font-size: 1.5rem; /* አዶውን ትንሽ አሳነሰነው */
-    margin-right: 15px;
+    font-size: 1.3rem;
+    margin-right: 12px;
 }
 
 .contact-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
     color: #0f172a;
 }
