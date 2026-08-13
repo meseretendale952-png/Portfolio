@@ -13,19 +13,21 @@
     margin: 0;
     padding: 0;
     transition: all 0.3s ease;
-}
-
 body, html {
     font-family: 'Poppins', sans-serif;
-    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/069/005/651/small/sun-shining-over-a-colorful-background-photo.jpg) !important;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%) !important;
+    /* እዚህ ጋር ያገኘሽውን የምስል ሊንክ አስገቢ */
+    background-image: url(https://img.magnific.com/free-photo/3d-sunset-ocean-landscape_1048-10363.jpg?semt=ais_test_b&w=740&q=80) !important;
+    background-size: cover;          /* ምስሉ መላውን ስክሪን እንዲሸፍን */
+    background-position: center;     /* ምስሉ መሀል ላይ እንዲሆን */
+    background-attachment: fixed;    /* ስክሮል ስታደርጊ ምስሉ እንዳይንቀሳቀስ */
     color: #1e293b;
+    line-height: 1.7;
     margin: 0;
     padding: 0;
     width: 100%;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .highlight-box, .edu-item, .skill-card, .project-card, .contact-item {
