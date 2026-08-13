@@ -406,13 +406,18 @@ p {
     text-align: center;
     font-size: 0.95rem;
     margin-top: 40px;
-    padding: 10px;
+    padding: 12px 20px;
+    background: rgba(15, 23, 42, 0.75); /* ከኋላው የሚታይ ከለላ (Background) */
+    border-radius: 8px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.footer, .footer p, .footer span {
-    color:white !important; /* በጣም ደማቅ ጥቁር ቀለም (እንዲታይ) */
-    font-weight: 600;           /* ጽሁፉ ውፍረት እንዲኖረው */
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8); /* ከነጩ ዳራ ጋር እንዲለያይ ነጭ ጥላ */
+.footer p, .footer span {
+    color: #ffffff !important; /* ደማቅ ነጭ ቀለም */
+    font-weight: 600;
+    margin: 0;
 }
 
 @media (max-width: 768px) {
