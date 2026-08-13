@@ -15,19 +15,16 @@
     transition: all 0.3s ease;
 body, html {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%) !important;
-    /* እዚህ ጋር ያገኘሽውን የምስል ሊንክ አስገቢ */
-    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/081/998/020/small_2x/sunrise-scene-with-gradient-sky-and-yellow-sun-digital-illustration-vector.jpg) !important;
-    background-size: cover;          /* ምስሉ መላውን ስክሪን እንዲሸፍን */
-    background-position: center;     /* ምስሉ መሀል ላይ እንዲሆን */
-    background-attachment: fixed;    /* ስክሮል ስታደርጊ ምስሉ እንዳይንቀሳቀስ */
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/081/998/020/small_2x/sunrise-scene-with-gradient-sky-and-yellow-sun-digital-illustration-vector.jpg') !important;
+    background-size: 100% 100% !important; /* ምስሉ መላውን ገጽ እንዲሸፍን እና መስመሩ እንዳይደጋገም */
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
     color: #1e293b;
-    line-height: 1.7;
     margin: 0;
     padding: 0;
     width: 100%;
     min-height: 100vh;
-    overflow-x: hidden;
 }
 
 .highlight-box, .edu-item, .skill-card, .project-card, .contact-item {
