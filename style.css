@@ -404,13 +404,15 @@ p {
 
 .footer {
     text-align: center;
-    color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     margin-top: 40px;
+    padding: 10px;
 }
-    .footer, .footer p, .footer span {
-    color: #ffffff !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* ጽሁፉ ከዳራው ጋር ጎልቶ እንዲታይ */
+
+.footer, .footer p, .footer span {
+    color: #0f172a !important; /* በጣም ደማቅ ጥቁር ቀለም (እንዲታይ) */
+    font-weight: 600;           /* ጽሁፉ ውፍረት እንዲኖረው */
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8); /* ከነጩ ዳራ ጋር እንዲለያይ ነጭ ጥላ */
 }
 
 @media (max-width: 768px) {
