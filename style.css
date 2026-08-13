@@ -14,14 +14,13 @@
     padding: 0;
     transition: all 0.3s ease;
 }
+
 body, html {
     font-family: 'Poppins', sans-serif;
-    /* እዚህ ጋር ያገኘሽውን የምስል ሊንክ አስገቢ */
     background-image: url('https://img.magnific.com/premium-vector/abstract-pastel-coloured-sunset-landscape-background_1048-20584.jpg?semt=ais_hybrid&w=740&q=80') !important;
-    background-image: url(https://img.magnific.com/premium-vector/abstract-pastel-coloured-sunset-landscape-background_1048-20584.jpg?semt=ais_hybrid&w=740&q=80) !important;
-    background-size: cover;          /* ምስሉ መላውን ስክሪን እንዲሸፍን */
-    background-position: center;     /* ምስሉ መሀል ላይ እንዲሆን */
-    background-attachment: fixed;    /* ስክሮል ስታደርጊ ምስሉ እንዳይንቀሳቀስ */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: #1e293b;
     margin: 0;
     padding: 0;
@@ -29,25 +28,15 @@ body, html {
     min-height: 100vh;
 }
 
-/* ካርዶቹን ትንሽ ግልጽ በማድረግ ምስሉ ከኋላ እንዲታይ ማድረግ */
-.card, .highlight-box, .skill-card, .project-card, .contact-item {
-    background: rgba(255, 255, 255, 0.7) !important; /* ከፊል ግልጽነት */
-    backdrop-filter: blur(10px); /* ምስሉ ከኋላው እንዲደበዝዝ */
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
 .highlight-box, .edu-item, .skill-card, .project-card, .contact-item {
     background: rgba(255, 255, 255, 0.7) !important;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
-.highlight-box h3, .skill-name, h1, h2, strong {
-    color: #ffffff !important;
-}
-
-.highlight-box p, .skill-level, p {
-    color: #94a3b8 !important;
-}
 .header-wrapper {
     position: fixed;
     top: 0;
@@ -120,19 +109,13 @@ body, html {
 }
 
 .card {
-    background: transparent !important; /* የካርዶቹን ነጭ ዳራ በማጥፋት የጀርባውን ከለር እንዲያሳዩ ያደርጋል */
+    background: transparent !important;
     border-radius: 0;
     border: none;
     box-shadow: none;
     padding: 40px 8% 60px;
     width: 100%;
     min-height: calc(100vh - 80px);
-}
-
-/* የውስጥ ካርዶችም (ለምሳሌ Skills እና Projects ካርዶች) ከጀርባው ከለር ጋር እንዲዋሃዱ */
-.highlight-box, .edu-item, .skill-card, .project-card, .contact-item {
-    background: rgba(255, 255, 255, 0.6) !important; /* ለስላሳ ግልጽነት ያለው ነጭ ከለር */
-    backdrop-filter: blur(8px);
 }
 
 .hero-logo-container {
@@ -224,13 +207,6 @@ h1 {
     text-align: left;
 }
 
-.highlight-box {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    padding: 20px;
-    border-radius: 14px;
-}
-
 .highlight-box h3 {
     font-size: 1.05rem;
     color: var(--text-main);
@@ -299,10 +275,6 @@ p {
     display: flex;
     align-items: center;
     gap: 20px;
-    background: #f8fafc;
-    padding: 25px 30px;
-    border-radius: 16px;
-    border: 1px solid #e2e8f0;
 }
 
 .edu-icon {
@@ -316,13 +288,9 @@ p {
 }
 
 .skill-card {
-    background: #f8fafc;
-    padding: 22px;
-    border-radius: 14px;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    border: 1px solid #e2e8f0;
 }
 
 .skill-header {
@@ -361,10 +329,6 @@ p {
 }
 
 .project-card {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    padding: 26px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -393,11 +357,7 @@ p {
     gap: 15px;
     color: var(--accent-color);
     text-decoration: none;
-    background: #f8fafc;
-    padding: 20px 28px;
-    border-radius: 14px;
     font-size: 1.05rem;
-    border: 1px solid #e2e8f0;
     font-weight: 500;
 }
 
