@@ -1,455 +1,443 @@
 :root {
-    --bg-color: #ffffff;
-    --card-bg: #ffffff;
-    --text-main: #0f172a;
-    --text-muted: #64748b;
-    --accent-color: #2563eb;
-    --accent-dark: #0f172a;
-    --accent-gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    --bg-color: #ffffff;
+    --card-bg: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --accent-color: #2563eb;
+    --accent-dark: #0f172a;
+    --accent-gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    transition: all 0.3s ease;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
 }
 body, html {
-    font-family: 'Poppins', sans-serif;
-    /* የፈለግሽው የፀሐይ መውጫ ምስል */
-    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/081/998/020/small_2x/sunrise-scene-with-gradient-sky-and-yellow-sun-digital-illustration-vector.jpg) !important;
-    background-size: cover;          /* ምስሉ መላውን ገጽ እንዲሸፍን */
-    background-position: center;     /* ምስሉ መሀል ላይ እንዲሆን */
-    background-attachment: fixed;    /* ስክሮል ስታደርጊ ምስሉ እንዳይንቀሳቀስ */
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100vh;
-}
-
-.card {
-    background: transparent !important;
-    border: none;
-    box-shadow: none;
-    padding: 40px 8% 60px;
-    width: 100%;
-    min-height: calc(100vh - 80px);
+    font-family: 'Poppins', sans-serif;
+    /* እዚህ ጋር ያገኘሽውን የምስል ሊንክ አስገቢ */
+    background-image: url('https://img.magnific.com/premium-vector/abstract-pastel-coloured-sunset-landscape-background_1048-20584.jpg?semt=ais_hybrid&w=740&q=80') !important;
+    background-image: url(https://img.magnific.com/premium-vector/abstract-pastel-coloured-sunset-landscape-background_1048-20584.jpg?semt=ais_hybrid&w=740&q=80) !important;
+    background-size: cover;          /* ምስሉ መላውን ስክሪን እንዲሸፍን */
+    background-position: center;     /* ምስሉ መሀል ላይ እንዲሆን */
+    background-attachment: fixed;    /* ስክሮል ስታደርጊ ምስሉ እንዳይንቀሳቀስ */
+    color: #1e293b;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
 }
 
 /* ካርዶቹን ትንሽ ግልጽ በማድረግ ምስሉ ከኋላ እንዲታይ ማድረግ */
+.card, .highlight-box, .skill-card, .project-card, .contact-item {
+    background: rgba(255, 255, 255, 0.7) !important; /* ከፊል ግልጽነት */
+    backdrop-filter: blur(10px); /* ምስሉ ከኋላው እንዲደበዝዝ */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
 .highlight-box, .edu-item, .skill-card, .project-card, .contact-item {
-    background: rgba(255, 255, 255, 0.6) !important; /* ከፊል ግልጽነት ያለው ነጭ */
-    backdrop-filter: blur(8px); /* የካርዶቹ ጀርባ እንዲደበዝዝ */
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .highlight-box h3, .skill-name, h1, h2, strong {
-    color: #ffffff !important;
+    color: #ffffff !important;
 }
 
 .highlight-box p, .skill-level, p {
-    color: #94a3b8 !important;
+    color: #94a3b8 !important;
 }
-/* የላይኛውን ናቪጌሽን ባር ከዳራው ጋር ሙሉ በሙሉ ማቀናጀት */
 .header-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.15) !important; /* ለስላሳ ግልጽነት ያለው ከለር */
-    backdrop-filter: blur(12px); /* ከኋላ ያለው ምስል እንዲደበዝዝ እና ውብ እንዲሆን */
-    background: rgba(15, 23, 42, 0.6) !important; /* ለስላሳ ግልጽነት ያለው ጥቁር ዳራ */
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(52, 76, 212, 0.95);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    border-bottom: 1px solid #e2e8f0;
 }
 
-/* የናቪጌሽን ሊንኮች ከለር በግልጽ እንዲታዩ */
-.brand-text, .nav-links a {
 .navbar {
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 8%;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
 }
 
 .brand-text {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #ffffff !important;
-    text-decoration: none;
-    letter-spacing: 1px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
 }
 
 .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 10px;
+    display: flex;
+    list-style: none;
+    gap: 10px;
 }
 
 .nav-links a {
-    color: #ffffff !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* ጽሁፉ ከዳራው ጋር እንዳይመሳሰል ጥላ መስጠት */
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 10px;
 }
 
 .nav-links a:hover, .nav-links a.active-link {
-    background: rgba(255, 255, 255, 0.25) !important;
-    color: #ffffff !important;
-    background: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
 }
+
 .container {
-    width: 100%;
-    max-width: 100%;
-    padding: 0;
-    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .tab-content {
-    display: none;
-    width: 100%;
+    display: none;
+    width: 100%;
 }
 
 .tab-content.active {
-    display: block;
-    animation: fadeIn 0.4s ease-in-out;
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .card {
-    background: transparent !important; /* የካርዶቹን ነጭ ዳራ በማጥፋት የጀርባውን ከለር እንዲያሳዩ ያደርጋል */
-    border-radius: 0;
-    border: none;
-    box-shadow: none;
-    padding: 40px 8% 60px;
-    width: 100%;
-    min-height: calc(100vh - 80px);
+    background: transparent !important; /* የካርዶቹን ነጭ ዳራ በማጥፋት የጀርባውን ከለር እንዲያሳዩ ያደርጋል */
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    padding: 40px 8% 60px;
+    width: 100%;
+    min-height: calc(100vh - 80px);
 }
 
 /* የውስጥ ካርዶችም (ለምሳሌ Skills እና Projects ካርዶች) ከጀርባው ከለር ጋር እንዲዋሃዱ */
 .highlight-box, .edu-item, .skill-card, .project-card, .contact-item {
-    background: rgba(255, 255, 255, 0.6) !important; /* ለስላሳ ግልጽነት ያለው ነጭ ከለር */
-    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.6) !important; /* ለስላሳ ግልጽነት ያለው ነጭ ከለር */
+    backdrop-filter: blur(8px);
 }
 
 .hero-logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
 .circular-logo-wrapper {
-    position: relative;
-    width: 480px; 
-    height: 480px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
+    position: relative;
+    width: 480px; 
+    height: 480px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .circular-text-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation: rotateText 22s linear infinite;
-    z-index: 2;
-    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: rotateText 22s linear infinite;
+    z-index: 2;
+    pointer-events: none;
 }
 
 .inner-profile-img {
-    width: 340px; 
-    height: 340px; 
-    border-radius: 50%; 
-    object-fit: cover;
-    border: 7px solid var(--accent-dark);
-    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.3);
-    z-index: 1;
+    width: 340px; 
+    height: 340px; 
+    border-radius: 50%; 
+    object-fit: cover;
+    border: 7px solid var(--accent-dark);
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.3);
+    z-index: 1;
 }
 
 @keyframes rotateText {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .hero-intro {
-    text-align: center;
-    max-width: 1100px;
-    margin: 0 auto;
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .badge {
-    display: inline-block;
-    padding: 5px 16px;
-    background: rgba(37, 99, 235, 0.1);
-    color: var(--accent-color);
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 12px;
+    display: inline-block;
+    padding: 5px 16px;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--accent-color);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 12px;
 }
 
 h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--text-main);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-main);
 }
 
 .subtitle {
-    color: var(--accent-color);
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-top: 10px;
+    color: var(--accent-color);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 10px;
 }
 
 .section-divider {
-    border: 0;
-    height: 1px;
-    background: #e2e8f0;
-    margin: 25px 0 30px;
+    border: 0;
+    height: 1px;
+    background: #e2e8f0;
+    margin: 25px 0 30px;
 }
 
 .quick-highlights {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin: 30px 0;
-    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 30px 0;
+    text-align: left;
 }
 
 .highlight-box {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    padding: 20px;
-    border-radius: 14px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    border-radius: 14px;
 }
 
 .highlight-box h3 {
-    font-size: 1.05rem;
-    color: var(--text-main);
-    margin-bottom: 6px;
+    font-size: 1.05rem;
+    color: var(--text-main);
+    margin-bottom: 6px;
 }
 
 .highlight-box p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
+    font-size: 0.95rem;
+    color: var(--text-muted);
 }
 
 .cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
 }
 
 .btn {
-    padding: 14px 30px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
+    padding: 14px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .primary-btn {
-    background: var(--accent-gradient);
-    color: #fff;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    background: var(--accent-gradient);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
 }
 
 .secondary-btn {
-    background: #f1f5f9;
-    color: var(--text-main);
-    border: 1px solid #e2e8f0;
+    background: #f1f5f9;
+    color: var(--text-main);
+    border: 1px solid #e2e8f0;
 }
 
 h2 {
-    font-size: 1.8rem;
-    color: var(--text-main);
-    margin-bottom: 25px;
-    position: relative;
-    padding-left: 18px;
+    font-size: 1.8rem;
+    color: var(--text-main);
+    margin-bottom: 25px;
+    position: relative;
+    padding-left: 18px;
 }
 
 h2::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 5px;
-    height: 85%;
-    background: var(--accent-color);
-    border-radius: 4px;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 85%;
+    background: var(--accent-color);
+    border-radius: 4px;
 }
 
 p {
-    color: var(--text-muted);
-    font-size: 1.05rem;
-    line-height: 1.8;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
 }
 
 .edu-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background: #f8fafc;
-    padding: 25px 30px;
-    border-radius: 16px;
-    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #f8fafc;
+    padding: 25px 30px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
 }
 
 .edu-icon {
-    font-size: 2.4rem;
+    font-size: 2.4rem;
 }
 
 .skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
 }
 
 .skill-card {
-    background: #f8fafc;
-    padding: 22px;
-    border-radius: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    padding: 22px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: 1px solid #e2e8f0;
 }
 
 .skill-header {
-    display: flex;
-    justify-content: space-between;
-    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
 }
 
 .skill-name {
-    color: var(--text-main);
+    color: var(--text-main);
 }
 
 .skill-level {
-    color: var(--accent-color);
-    font-size: 0.95rem;
+    color: var(--accent-color);
+    font-size: 0.95rem;
 }
 
 .progress-bar {
-    width: 100%;
-    height: 10px;
-    background: #e2e8f0;
-    border-radius: 10px;
-    overflow: hidden;
+    width: 100%;
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .progress-fill {
-    height: 100%;
-    background: var(--accent-gradient);
-    border-radius: 10px;
+    height: 100%;
+    background: var(--accent-gradient);
+    border-radius: 10px;
 }
 
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
 
 .project-card {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    padding: 26px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 18px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 18px;
 }
 
 .btn-disabled {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #cbd5e1;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    border-radius: 10px;
-    text-align: center;
+    display: inline-block;
+    padding: 10px 20px;
+    background: #cbd5e1;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-radius: 10px;
+    text-align: center;
 }
 
 .contact-links {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
 .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    color: var(--accent-color);
-    text-decoration: none;
-    background: #f8fafc;
-    padding: 20px 28px;
-    border-radius: 14px;
-    font-size: 1.05rem;
-    border: 1px solid #e2e8f0;
-    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--accent-color);
+    text-decoration: none;
+    background: #f8fafc;
+    padding: 20px 28px;
+    border-radius: 14px;
+    font-size: 1.05rem;
+    border: 1px solid #e2e8f0;
+    font-weight: 500;
 }
 
 .footer {
-    text-align: center;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    margin-top: 40px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 40px;
 }
 
 @media (max-width: 768px) {
-    body {
-        padding-top: 70px;
-    }
-    .navbar {
-        padding: 0 15px;
-        height: 70px;
-    }
-    .card {
-        padding: 30px 5%;
-    }
-    .circular-logo-wrapper {
-        width: 240px;
-        height: 240px;
-    }
-    .inner-profile-img {
-        width: 170px;
-        height: 170px;
-    }
-    .nav-links {
-        gap: 2px;
-    }
-    .nav-links a {
-        font-size: 0.8rem;
-        padding: 6px 8px;
-    }
-    .quick-highlights {
-        grid-template-columns: 1fr;
-    }
-    .cta-buttons {
-        flex-direction: column;
-    }
+    body {
+        padding-top: 70px;
+    }
+    .navbar {
+        padding: 0 15px;
+        height: 70px;
+    }
+    .card {
+        padding: 30px 5%;
+    }
+    .circular-logo-wrapper {
+        width: 240px;
+        height: 240px;
+    }
+    .inner-profile-img {
+        width: 170px;
+        height: 170px;
+    }
+    .nav-links {
+        gap: 2px;
+    }
+    .nav-links a {
+        font-size: 0.8rem;
+        padding: 6px 8px;
+    }
+    .quick-highlights {
+        grid-template-columns: 1fr;
+    }
+    .cta-buttons {
+        flex-direction: column;
+    }
 }
