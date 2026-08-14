@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <!-- 🌐 Clean Header aligned with Page Width -->
+    <!-- 🌐 Clean Header (Home, About, Education, Contact ብቻ አለው) -->
     <header class="header-wrapper">
         <nav class="navbar">
             <a href="#" class="brand-logo-link" onclick="openTab(event, 'home')">
@@ -17,11 +17,10 @@
                 <span class="brand-name">MESERET ENDALE</span>
             </a>
             
-           <ul class="nav-links">
+            <ul class="nav-links">
                 <li><a href="#" class="nav-btn active-link" onclick="openTab(event, 'home')">Home</a></li>
                 <li><a href="#" class="nav-btn" onclick="openTab(event, 'about')">About</a></li>
                 <li><a href="#" class="nav-btn" onclick="openTab(event, 'education')">Education</a></li>
-                
                 <li><a href="#" class="nav-btn" onclick="openTab(event, 'contact')">Contact</a></li>
             </ul>
         </nav>
@@ -101,89 +100,42 @@
             </div>
         </div>
 
-        <!-- 📚 Skills Section -->
+        <!-- 📚 Skills Section (አሁን በ Sidebar በኩል እንዲመጣ ወይም በራሱ ገጽ እንዲሆን የተስተካከለ) -->
         <div id="skills" class="tab-content card">
             <h2>📚 Technical Skills</h2>
             <div class="skills-container">
-                
-                <!-- Python Skill -->
                 <div class="skill-card">
                     <div class="skill-header">
                         <span class="skill-name">🐍 Python & Data Science</span>
                         <span class="skill-level">Expert</span>
                     </div>
-                    <p class="skill-desc">Writing clean, modular Python code for advanced data analysis, building machine learning models, handling dataset splitting, and performing accurate data classification tasks in Jupyter environments.</p>
+                    <p class="skill-desc">Writing clean, modular Python code for advanced data analysis and machine learning models.</p>
                     <div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div>
                 </div>
-                
-                <!-- C/C++ Skill -->
                 <div class="skill-card">
                     <div class="skill-header">
                         <span class="skill-name">⚡ C++ & Microcontrollers</span>
                         <span class="skill-level">Advanced</span>
                     </div>
-                    <p class="skill-desc">Extensive experience in low-level programming, hardware execution loops, microcontroller architecture configurations, and designing embedded logic simulation programs like traffic light controls.</p>
+                    <p class="skill-desc">Low-level programming, hardware execution loops, and embedded logic simulations.</p>
                     <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
                 </div>
-                
-                <!-- Java Skill -->
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <span class="skill-name">☕ Java Programming</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                    <p class="skill-desc">Applying strong object-oriented programming (OOP) principles, structural software design patterns, robust application logic, and scalable code architecture for software development.</p>
-                    <div class="progress-bar"><div class="progress-fill" style="width: 80%"></div></div>
-                </div>
-                
-                <!-- Web Development Skill -->
                 <div class="skill-card">
                     <div class="skill-header">
                         <span class="skill-name">🌐 HTML / CSS / JS</span>
                         <span class="skill-level">Expert</span>
                     </div>
-                    <p class="skill-desc">Building modern, fully responsive, cross-device compatible frontend web platforms, designing clean UI/UX layouts, and deploying project code repositories directly on GitHub.</p>
+                    <p class="skill-desc">Building modern, responsive frontend web platforms and UI/UX layouts.</p>
                     <div class="progress-bar"><div class="progress-fill" style="width: 92%"></div></div>
                 </div>
-                
-                <!-- Networking Skill -->
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <span class="skill-name">🌐 Networking & VLANs</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                    <p class="skill-desc">Hands-on expertise in configuring virtual local area networks (specifically VLAN 5 and 10), implementing routing algorithms, managing network topologies, and supporting datacenter operations.</p>
-                    <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
-                </div>
-
-                <!-- Computer Graphics Skill -->
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <span class="skill-name">🎨 Computer Graphics</span>
-                        <span class="skill-level">Intermediate</span>
-                    </div>
-                    <p class="skill-desc">Studying advanced rendering techniques, drawing geometric primitives, handling color transformations, and writing dynamic animation scripts utilizing OpenGL and FreeGLUT libraries.</p>
-                    <div class="progress-bar"><div class="progress-fill" style="width: 65%"></div></div>
-                </div>
-
-                <!-- AI & Machine Learning Skill -->
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <span class="skill-name">🧠 AI & Machine Learning</span>
-                        <span class="skill-level">Learning</span>
-                    </div>
-                    <p class="skill-desc">Exploring core artificial intelligence concepts, decision tree classifiers, dataset accuracy verification, predictive modeling, and result visualization using Google Colab and Python.</p>
-                    <div class="progress-bar"><div class="progress-fill" style="width: 50%;"></div></div>
-                </div>
-
             </div>
         </div>
 
-        <!-- 💻 Projects Section -->
+        <!-- 💻 Projects Section (ግራ በኩል Sidebar ያለው) -->
         <div id="projects" class="tab-content card">
             <div class="projects-layout">
                 
-                <!-- 1. Left Sidebar -->
+                <!-- Left Sidebar Menu -->
                 <div class="projects-sidebar">
                     <h3>Projects Menu</h3>
                     <button class="side-btn active" onclick="showProject(event, 'proj-job')">Job Board App</button>
@@ -191,10 +143,8 @@
                     <button class="side-btn" onclick="showProject(event, 'proj-interactive')">Interactive Calculator</button>
                 </div>
 
-                <!-- 2. Right Content Area -->
+                <!-- Right Content Area -->
                 <div class="projects-main-content">
-                    
-                    <!-- Job Board App Pane -->
                     <div id="proj-job" class="project-pane active-pane">
                         <h2>Job Board App</h2>
                         <p>A job listing application featuring location-based filtering for job seekers.</p>
@@ -203,7 +153,6 @@
                         </div>
                     </div>
 
-                    <!-- Symptom Checker Pane -->
                     <div id="proj-symptom" class="project-pane">
                         <h2>Symptom Checker</h2>
                         <div class="project-demo-box">
@@ -211,15 +160,14 @@
                         </div>
                     </div>
 
-                    <!-- Interactive Calculator Pane -->
                     <div id="proj-interactive" class="project-pane">
                         <h2>Interactive Calculator</h2>
                         <div class="project-demo-box">
                             <iframe src="calculator.html" class="project-iframe"></iframe>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
 
