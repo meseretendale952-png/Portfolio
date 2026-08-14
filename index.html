@@ -181,62 +181,46 @@
         </div>
 
         <!-- 💻 Projects Section -->
-        <!-- 💻 Projects Section with Sidebar -->
-        <div id="projects" class="tab-content card">
-            <h2>💻 Featured Projects</h2>
-            <div class="projects-layout">
-                
-                <!-- Sidebar Menu -->
-                <div class="projects-sidebar">
-                    <h3>📂 Project Menu</h3>
-                    <button class="side-btn active" onclick="showProject(event, 'job-board')">📢 Job Board App</button>
-                    <button class="side-btn" onclick="showProject(event, 'symptom-checker')">🏥 Symptom Checker</button>
-                    <button class="side-btn" onclick="showProject(event, 'calculator')">🧮 Interactive Calculator</button>
-                    <button class="side-btn" onclick="showProject(event, 'portfolio')">🌐 Personal Portfolio</button>
-                </div>
+        <!-- Main Projects Section Layout -->
+<div class="projects-layout">
+    
+    <!-- 1. Left Sidebar (በወረቀት ላይ የሳልከው የጎን ማውጫ) -->
+    <div class="projects-sidebar">
+        <h3>Projects</h3>
+        <button class="side-btn active" onclick="showProject(event, 'proj-job')">Job/Order APP</button>
+        <button class="side-btn" onclick="showProject(event, 'proj-symptom')">Symptom Checker</button>
+        <button class="side-btn" onclick="showProject(event, 'proj-interactive')">Interactive</button>
+    </div>
 
-                <!-- Main Content Display Area -->
-                <div class="projects-main-content">
-                    
-                    <!-- 1. Job Board App (Default) -->
-                    <div id="job-board" class="project-pane active-pane">
-                        <h3>Job Board App</h3>
-                        <p>A job listing application featuring location-based filtering for job seekers.</p>
-                        <div class="project-demo-box">
-                            <iframe src="jobs-location.html" class="project-iframe" title="Job Board App"></iframe>
-                        </div>
-                    </div>
-
-                    <!-- 2. Symptom Checker -->
-                    <div id="symptom-checker" class="project-pane">
-                        <h3>Symptom Checker</h3>
-                        <p>An interactive system designed for basic health assessment and medical advice.</p>
-                        <div class="project-demo-box">
-                            <iframe src="symptom-checker.html" class="project-iframe" title="Symptom Checker"></iframe>
-                        </div>
-                    </div>
-
-                    <!-- 3. Calculator -->
-                    <div id="calculator" class="project-pane">
-                        <h3>Interactive Calculator</h3>
-                        <p>A responsive web calculator built with custom UI and pure JavaScript logic.</p>
-                        <div class="project-demo-box">
-                            <iframe src="calculator.html" class="project-iframe" title="Calculator"></iframe>
-                        </div>
-                    </div>
-
-                    <!-- 4. Portfolio -->
-                    <div id="portfolio" class="project-pane">
-                        <h3>Personal Portfolio</h3>
-                        <p>A modern, responsive developer portfolio website.</p>
-                        <div class="project-demo-box" style="display: flex; align-items: center; justify-content: center;">
-                            <span class="btn-disabled">Active Project</span>
-                        </div>
-                    </div>
-
-                </div>
+    <!-- 2. Right Content Area (በቀኝ በኩል ፕሮጀክቱ የሚታይበት ቦታ) -->
+    <div class="projects-main-content">
+        
+        <!-- Job/Order APP Pane -->
+        <div id="proj-job" class="project-pane active-pane">
+            <h2>Job/Order APP</h2>
+            <div class="project-demo-box">
+                <iframe src="job-order.html" class="project-iframe"></iframe>
             </div>
         </div>
+
+        <!-- Symptom Checker Pane -->
+        <div id="proj-symptom" class="project-pane">
+            <h2>Symptom Checker</h2>
+            <div class="project-demo-box">
+                <iframe src="symptom-checker.html" class="project-iframe"></iframe>
+            </div>
+        </div>
+
+        <!-- Interactive Pane -->
+        <div id="proj-interactive" class="project-pane">
+            <h2>Interactive Project</h2>
+            <div class="project-demo-box">
+                <iframe src="interactive.html" class="project-iframe"></iframe>
+            </div>
+        </div>
+
+    </div>
+</div>
         <!-- 📬 Contact Section -->
         <div id="contact" class="tab-content card">
             <h2>📫 Connect With Me</h2>
