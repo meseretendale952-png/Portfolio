@@ -23,25 +23,21 @@ function openTab(evt, tabName) {
     window.scrollTo(0, 0);
 }
 
-// 💻 Projects ገጽ ውስጥ ያሉትን ንዑስ ቁልፎች (Job Board / Symptom Checker / Calculator) መቀያየሪያ
-function selectProjectTab(evt, paneId) {
-    if (evt) evt.preventDefault();
+// 🪟 Project Preview Modal
+function openModal(url) {
+    document.getElementById('modalFrame').src = url;
+    document.getElementById('projectModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
 
-    // ፓኔሎቹን (project-pane) መቀያየር
-    var panes = document.getElementsByClassName('project-pane');
-    for (var i = 0; i < panes.length; i++) {
-        panes[i].classList.remove('active-pane');
-    }
-    document.getElementById(paneId).classList.add('active-pane');
+function closeModal() {
+    document.getElementById('projectModal').classList.remove('active');
+    document.getElementById('modalFrame').src = '';
+    document.body.style.overflow = 'auto';
+}
 
-    // ንዑስ ቁልፎቹ ላይ ያለውን active-sub ማዘመን
-    var subButtons = document.querySelectorAll('.project-sub-tabs .btn');
-    for (var i = 0; i < subButtons.length; i++) {
-        subButtons[i].classList.remove('active-sub');
+function closeModalOutside(event) {
+    if (event.target.id === 'projectModal') {
+        closeModal();
     }
-    if (evt && evt.currentTarget) {
-        evt.currentTarget.classList.add('active-sub');
-    }
-
-    window.scrollTo(0, 0);
 }
