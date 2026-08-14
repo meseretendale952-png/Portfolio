@@ -6,8 +6,6 @@
     --accent-color: #2563eb;
     --accent-dark: #0f172a;
     --accent-gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-    --sidebar-accent: #2563eb;
-    --sidebar-accent-light: #dbeafe;
 }
 
 * {
@@ -41,6 +39,7 @@ body, html {
     margin-bottom: 20px;
 }
 
+/* Header & Navbar */
 .header-wrapper {
     position: fixed;
     top: 0;
@@ -49,7 +48,7 @@ body, html {
     background: rgba(52, 76, 212, 0.95);
     backdrop-filter: blur(12px);
     z-index: 1000;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .navbar {
@@ -58,13 +57,13 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 8%;
+    padding: 0 5%;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 10px;
+    gap: 8px;
 }
 
 .nav-links a {
@@ -72,129 +71,28 @@ body, html {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
-    padding: 8px 16px;
+    padding: 8px 14px;
     border-radius: 10px;
     outline: none;
 }
 
 .nav-links a:hover, .nav-links a.active-link {
     color: #ffffff;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
 }
 
-/* =========================================
-   📂 Persistent Global Sidebar (Skills + Projects)
-   ቀለሙ ከ Header (ሰማያዊ) የተለየ - ሙቅ ብርቱካናማ (amber/orange) ነው
-   ========================================= */
-.global-sidebar {
-    position: fixed;
-    top: 80px;
-    left: 0;
-    width: 220px;
-    height: calc(100vh - 80px);
-    background: rgba(52, 76, 212, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 20px 15px;
-    overflow-y: auto;
-    z-index: 900;
-    border-right: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.global-sidebar h4 {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 18px 0 8px;
-}
-
-.sidebar-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    text-align: left;
-    padding: 12px 14px;
-    margin-bottom: 4px;
-    background: transparent;
-    border: none;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    color: #ffffff;
-    cursor: pointer;
-    text-decoration: none !important;
-}
-
-.sidebar-link:hover {
-    background: rgba(255, 255, 255, 0.12);
-    color: #ffffff;
-}
-
-.sidebar-link.active {
-    background: rgba(255, 255, 255, 0.22);
-    color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-}
-
-.sidebar-arrow {
-    font-size: 0.8rem;
-    transition: transform 0.25s ease;
-}
-
-.sidebar-arrow.rotated {
-    transform: rotate(90deg);
-}
-
-/* Collapsible sub-list - ተደብቆ ይጀምራል፣ "Projects" ስትጫን ብቻ ይከፈታል */
-.sidebar-sublist {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
-
-.sidebar-sublist.expanded {
-    max-height: 300px;
-}
-
-.sidebar-sublink {
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding: 9px 12px 9px 20px;
-    margin-bottom: 2px;
-    margin-top: 4px;
-    background: transparent;
-    border: none;
-    border-left: 2px solid transparent;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.75);
-    cursor: pointer;
-    text-decoration: none !important;
-}
-
-.sidebar-sublink:hover {
-    color: #ffffff;
-    border-left-color: rgba(255, 255, 255, 0.4);
-}
-
-.sidebar-sublink.active {
-    color: #ffffff;
-    font-weight: 700;
-    border-left-color: #ffffff;
-}
-
+/* ❌ Sidebar ሙሉ በሙሉ ስለጠፋ የ Content Area ህ ማርጅን 0 ተደርጓል */
 .content-area {
-    margin-left: 220px;
+    margin-left: 0 !important;
+    width: 100%;
 }
 
 .container {
     width: 100%;
-    max-width: 100%;
-    padding: 0;
-    margin: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .tab-content {
@@ -217,7 +115,7 @@ body, html {
     border-radius: 0;
     border: none;
     box-shadow: none;
-    padding: 40px 8% 60px;
+    padding: 40px 0 60px;
     width: 100%;
     min-height: calc(100vh - 80px);
 }
@@ -331,11 +229,13 @@ h1 {
 }
 
 .btn {
-    padding: 14px 30px;
+    padding: 12px 25px;
     border-radius: 12px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: none;
 }
 
 .primary-btn {
@@ -345,9 +245,14 @@ h1 {
 }
 
 .secondary-btn {
-    background: #f1f5f9;
+    background: rgba(255, 255, 255, 0.8);
     color: var(--text-main);
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.secondary-btn.active-sub {
+    background: var(--accent-color);
+    color: #fff;
 }
 
 h2 {
@@ -399,7 +304,6 @@ p {
     margin-bottom: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     min-height: 180px;
-    transition: transform 0.3s ease;
 }
 
 .skill-header {
@@ -438,16 +342,6 @@ p {
     border-radius: 10px;
 }
 
-.btn-disabled {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #cbd5e1;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    border-radius: 10px;
-    text-align: center;
-}
-
 .contact-links {
     display: flex;
     flex-direction: column;
@@ -481,9 +375,9 @@ footer.site-footer {
     display: block !important;
     text-align: center !important;
     width: 100% !important;
-    margin: 40px 0 0 0 !important;
-    padding: 20px 10px !important;
-    background: rgba(52, 76, 212, 0.95) !important;
+    margin: 40px auto 20px auto !important;
+    padding: 10px !important;
+    background: transparent !important;
     box-shadow: none !important;
 }
 
@@ -494,7 +388,7 @@ footer.site-footer p {
     text-align: center !important;
     margin: 0 auto !important;
     user-select: none !important;
-    text-shadow: none !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;
 }
 
 .brand-logo-link {
@@ -520,11 +414,8 @@ footer.site-footer p {
     letter-spacing: 0.5px;
 }
 
-/* =========================================
-   💻 Projects Content (panes)
-   ========================================= */
 .projects-main-content {
-    max-width: 900px;
+    width: 100%;
 }
 
 .project-pane {
@@ -537,18 +428,23 @@ footer.site-footer p {
 
 .project-demo-box {
     width: 100%;
-    height: 500px;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #ffffff;
+    border: none;
+    background: transparent;
     margin-top: 15px;
+    overflow: hidden;
 }
 
 .project-iframe {
     width: 100%;
-    height: 100%;
+    height: 1100px;
     border: none;
+    display: block;
+    background: transparent;
+    overflow: hidden;
+}
+
+.calculator-iframe {
+    height: 650px !important;
 }
 
 @media (max-width: 768px) {
@@ -556,11 +452,15 @@ footer.site-footer p {
         padding-top: 70px;
     }
     .navbar {
-        padding: 0 15px;
+        padding: 0 10px;
         height: 70px;
     }
+    .nav-links a {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
     .card {
-        padding: 30px 5%;
+        padding: 30px 15px;
     }
     .circular-logo-wrapper {
         width: 220px;
@@ -570,51 +470,10 @@ footer.site-footer p {
         width: 160px;
         height: 160px;
     }
-    .nav-links {
-        gap: 2px;
+    .project-iframe {
+        height: 950px;
     }
-    .nav-links a {
-        font-size: 0.8rem;
-        padding: 6px 8px;
-    }
-    .quick-highlights {
-        grid-template-columns: 1fr;
-    }
-    .cta-buttons {
-        flex-direction: column;
-    }
-
-    /* ሞባይል ላይ sidebar ወደ ላይ አግድም (horizontal) ይሆናል */
-    .global-sidebar {
-        position: static;
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        border-right: none;
-        border-bottom: 1px solid rgba(234, 88, 12, 0.15);
-        padding: 12px 15px;
-    }
-    .global-sidebar h4 {
-        width: 100%;
-        margin: 6px 0 2px;
-    }
-    .sidebar-link, .sidebar-sublink {
-        width: auto;
-        margin-bottom: 0;
-    }
-    .sidebar-sublist {
-        width: 100%;
-        max-height: 0;
-    }
-    .sidebar-sublist.expanded {
-        max-height: 200px;
-    }
-    .content-area {
-        margin-left: 0;
-    }
-    .project-demo-box {
-        height: 400px;
+    .calculator-iframe {
+        height: 600px !important;
     }
 }
