@@ -6,6 +6,8 @@
     --accent-color: #2563eb;
     --accent-dark: #0f172a;
     --accent-gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    --sidebar-accent: #2563eb;
+    --sidebar-accent-light: #dbeafe;
 }
 
 * {
@@ -39,7 +41,6 @@ body, html {
     margin-bottom: 20px;
 }
 
-/* Header & Navbar */
 .header-wrapper {
     position: fixed;
     top: 0;
@@ -48,7 +49,7 @@ body, html {
     background: rgba(52, 76, 212, 0.95);
     backdrop-filter: blur(12px);
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .navbar {
@@ -78,69 +79,63 @@ body, html {
 
 .nav-links a:hover, .nav-links a.active-link {
     color: #ffffff;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
 }
 
 /* =========================================
-   📂 Persistent Global Sidebar (Navbar-like Clean Links)
+   📂 Persistent Global Sidebar (Skills + Projects)
+   ቀለሙ ከ Header (ሰማያዊ) የተለየ - ሙቅ ብርቱካናማ (amber/orange) ነው
    ========================================= */
 .global-sidebar {
     position: fixed;
     top: 80px;
     left: 0;
-    width: 180px;
+    width: 220px;
     height: calc(100vh - 80px);
     background: rgba(52, 76, 212, 0.95);
     backdrop-filter: blur(10px);
-    padding: 20px 10px;
+    padding: 20px 15px;
     overflow-y: auto;
     z-index: 900;
     border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.sidebar-menu-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.sidebar-header-title {
+.global-sidebar h4 {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: rgba(255, 255, 255, 0.7);
-    margin: 18px 0 8px 12px;
+    margin: 18px 0 8px;
 }
 
-/* ልክ እንደ Top Bar አገናኞች ከበስተጀርባ ቦክስ ውጭ ጽሁፍ ብቻ እንዲሆኑ የተደረገ */
 .sidebar-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    text-decoration: none;
     width: 100%;
     text-align: left;
-    padding: 10px 14px;
-    margin-bottom: 4px;
-    background: transparent !important;
-    border: none !important;
-    border-radius: 10px;
-    font-weight: 500;
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.9);
+    padding: 12px 14px;
+    margin-bottom: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #ffffff;
     cursor: pointer;
 }
 
 .sidebar-link:hover {
-    background: rgba(255, 255, 255, 0.15) !important;
+    background: rgba(255, 255, 255, 0.2);
     color: #ffffff;
 }
 
 .sidebar-link.active {
-    background: rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.28);
     color: #ffffff;
-    font-weight: 600;
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .sidebar-arrow {
@@ -152,6 +147,7 @@ body, html {
     transform: rotate(90deg);
 }
 
+/* Collapsible sub-list - ተደብቆ ይጀምራል፣ "Projects" ስትጫን ብቻ ይከፈታል */
 .sidebar-sublist {
     max-height: 0;
     overflow: hidden;
@@ -166,35 +162,30 @@ body, html {
     display: block;
     width: 100%;
     text-align: left;
-    text-decoration: none;
-    padding: 8px 10px 8px 16px;
-    margin-bottom: 2px;
-    margin-top: 4px;
-    background: transparent !important;
-    border: none !important;
-    border-left: 2px solid rgba(255, 255, 255, 0.25) !important;
-    border-radius: 0 8px 8px 0;
+    padding: 9px 12px 9px 20px;
+    margin-bottom: 4px;
+    margin-top: 6px;
+    background: transparent;
+    border: none;
+    border-left: 2px solid rgba(255, 255, 255, 0.25);
     font-size: 0.85rem;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.75);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
 }
 
 .sidebar-sublink:hover {
     color: #ffffff;
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-left-color: #ffffff !important;
 }
 
 .sidebar-sublink.active {
     color: #ffffff;
-    font-weight: 600;
-    border-left-color: #ffffff !important;
-    background: rgba(255, 255, 255, 0.2) !important;
+    font-weight: 700;
+    border-left-color: #ffffff;
 }
 
 .content-area {
-    margin-left: 180px;
+    margin-left: 220px;
 }
 
 .container {
@@ -406,6 +397,7 @@ p {
     margin-bottom: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     min-height: 180px;
+    transition: transform 0.3s ease;
 }
 
 .skill-header {
@@ -444,6 +436,16 @@ p {
     border-radius: 10px;
 }
 
+.btn-disabled {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #cbd5e1;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
 .contact-links {
     display: flex;
     flex-direction: column;
@@ -477,9 +479,9 @@ footer.site-footer {
     display: block !important;
     text-align: center !important;
     width: 100% !important;
-    margin: 40px auto 20px auto !important;
-    padding: 10px !important;
-    background: transparent !important;
+    margin: 40px 0 0 0 !important;
+    padding: 20px 10px !important;
+    background: rgba(52, 76, 212, 0.95) !important;
     box-shadow: none !important;
 }
 
@@ -490,7 +492,7 @@ footer.site-footer p {
     text-align: center !important;
     margin: 0 auto !important;
     user-select: none !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;
+    text-shadow: none !important;
 }
 
 .brand-logo-link {
@@ -516,6 +518,9 @@ footer.site-footer p {
     letter-spacing: 0.5px;
 }
 
+/* =========================================
+   💻 Projects Content (panes)
+   ========================================= */
 .projects-main-content {
     max-width: 900px;
 }
@@ -528,27 +533,20 @@ footer.site-footer p {
     display: block;
 }
 
-/* iframe የራሱ ስክሮል እንዳይኖረው የተስተካከለ ክፍል */
 .project-demo-box {
     width: 100%;
-    border: none;
-    background: transparent;
-    margin-top: 15px;
+    height: 500px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
     overflow: hidden;
+    background: #ffffff;
+    margin-top: 15px;
 }
 
 .project-iframe {
     width: 100%;
-    height: 1100px;
+    height: 100%;
     border: none;
-    display: block;
-    background: transparent;
-    overflow: hidden;
-}
-
-/* ካልኩሌተሩ አጭር ስለሆነ የቁመት ማስተካከያ */
-.calculator-iframe {
-    height: 650px !important;
 }
 
 @media (max-width: 768px) {
@@ -570,6 +568,21 @@ footer.site-footer p {
         width: 160px;
         height: 160px;
     }
+    .nav-links {
+        gap: 2px;
+    }
+    .nav-links a {
+        font-size: 0.8rem;
+        padding: 6px 8px;
+    }
+    .quick-highlights {
+        grid-template-columns: 1fr;
+    }
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    /* ሞባይል ላይ sidebar ወደ ላይ አግድም (horizontal) ይሆናል */
     .global-sidebar {
         position: static;
         width: 100%;
@@ -578,10 +591,10 @@ footer.site-footer p {
         flex-wrap: wrap;
         gap: 8px;
         border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        border-bottom: 1px solid rgba(234, 88, 12, 0.15);
         padding: 12px 15px;
     }
-    .sidebar-header-title {
+    .global-sidebar h4 {
         width: 100%;
         margin: 6px 0 2px;
     }
@@ -600,12 +613,6 @@ footer.site-footer p {
         margin-left: 0;
     }
     .project-demo-box {
-        height: auto;
-    }
-    .project-iframe {
-        height: 950px;
-    }
-    .calculator-iframe {
-        height: 600px !important;
+        height: 400px;
     }
 }
