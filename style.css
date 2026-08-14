@@ -404,21 +404,19 @@ p {
 
 .footer {
     text-align: center;
-    margin-top: 30px;
-    padding: 10px 20px;
-    background: rgba(15, 23, 42, 0.85); /* ጽሁፉ ከዳራው ጋር እንዳይመሳሰል ጠቆር ያለ ግልጽ ቦክስ */
-    border-radius: 8px;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    user-select: none; /* ጽሁፉ ላይ ሲጫኑ ሰማያዊ ከለላ አድርጎ እንዳይመረጥ የሚከለክል */
+    margin-top: 40px;
+    padding: 10px;
+    background: transparent !important; /* የጀርባ ቦክሱን ሙሉ በሙሉ ያጠፋዋል */
+    box-shadow: none !important;
+    user-select: none; /* ሲጫኑ ሰማያዊ ከለላ እንዳያመጣ */
 }
 
 .footer p {
     color: #ffffff !important; /* ደማቅ ነጭ ጽሁፍ */
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 500;
     margin: 0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7); /* ከዳራው ጋር ጎልቶ እንዲታይ የጽሁፍ ጥላ ብቻ */
 }
 @media (max-width: 768px) {
     body {
