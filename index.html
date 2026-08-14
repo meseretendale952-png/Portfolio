@@ -135,32 +135,32 @@
                 </div>
             </div>
 
-            <!-- 💻 Projects Section -->
+            <!-- 💻 Projects Section (መጀመሪያ እንደነበረው Try it Live ካርድ አካሄድ) -->
             <div id="projects" class="tab-content card">
-                <h2>Projects</h2>
-                <div class="project-sub-tabs" style="margin-bottom: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
-                    <button class="btn secondary-btn active-sub" onclick="selectProjectTab(event, 'proj-job')">📢 Job Board App</button>
-                    <button class="btn secondary-btn" onclick="selectProjectTab(event, 'proj-symptom')">🏥 Symptom Checker</button>
-                    <button class="btn secondary-btn" onclick="selectProjectTab(event, 'proj-interactive')">🧮 Interactive Calculator</button>
-                </div>
-
-                <div class="projects-main-content">
-                    <div id="proj-job" class="project-pane active-pane">
-                        <div class="project-demo-box">
-                            <iframe src="jobs-location.html" class="project-iframe" scrolling="yes"></iframe>
-                        </div>
+                <h2>💻 Featured Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>🧮 Interactive Calculator</h3>
+                        <p>A responsive web calculator built with custom UI and pure JavaScript logic.</p>
+                        <button onclick="openModal('calculator.html')" class="btn primary-btn">Try it Live →</button>
                     </div>
 
-                    <div id="proj-symptom" class="project-pane">
-                        <div class="project-demo-box">
-                            <iframe src="symptom-checker.html" class="project-iframe" scrolling="yes"></iframe>
-                        </div>
+                    <div class="project-card">
+                        <h3>🏥 Symptom Checker</h3>
+                        <p>An interactive system designed for basic health assessment and health awareness.</p>
+                        <button onclick="openModal('symptom-checker.html')" class="btn primary-btn">Try it Live →</button>
                     </div>
 
-                    <div id="proj-interactive" class="project-pane">
-                        <div class="project-demo-box">
-                            <iframe src="calculator.html" class="project-iframe calculator-iframe" scrolling="yes"></iframe>
-                        </div>
+                    <div class="project-card">
+                        <h3>📢 Job Board App</h3>
+                        <p>A job listing application featuring location-based filtering for job seekers.</p>
+                        <button onclick="openModal('jobs-location.html')" class="btn primary-btn">Try it Live →</button>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>🌐 Personal Portfolio</h3>
+                        <p>A modern, responsive developer portfolio website.</p>
+                        <span class="btn-disabled">Active Project</span>
                     </div>
                 </div>
             </div>
@@ -189,6 +189,16 @@
                 <p>&copy; 2026 Meseret Endale. Computer Science Student.</p>
             </footer>
 
+        </div>
+    </div>
+
+    <!-- 🪟 Project Preview Panel -->
+    <div id="projectModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-topbar">
+                <button class="modal-back-btn" onclick="closeModal()">← Back to Portfolio</button>
+            </div>
+            <iframe id="modalFrame" src="" class="modal-iframe"></iframe>
         </div>
     </div>
 
