@@ -21,8 +21,6 @@
                 <li><a href="#" class="nav-btn active-link" onclick="openTab(event, 'home')">Home</a></li>
                 <li><a href="#" class="nav-btn" onclick="openTab(event, 'about')">About</a></li>
                 <li><a href="#" class="nav-btn" onclick="openTab(event, 'education')">Education</a></li>
-                <li><a href="#" class="nav-btn" onclick="openTab(event, 'skills')">Skills</a></li>
-                <li><a href="#" class="nav-btn" onclick="openTab(event, 'projects')">Projects</a></li>
                 <li><a href="#" class="nav-btn" onclick="openTab(event, 'contact')">Contact</a></li>
             </ul>
         </nav>
@@ -181,47 +179,49 @@
         </div>
 
         <!-- 💻 Projects Section -->
-        <!-- Main Projects Section Layout --><!-- Main Projects Section Layout -->
-<div class="projects-layout">
-    
-    <!-- 1. Left Sidebar (በወረቀት ላይ እንዳለው ንዑስ ማውጫ ዝርዝር) -->
-    <div class="projects-sidebar">
-        <h3>Projects Menu</h3>
-        <button class="side-btn active" onclick="showProject(event, 'proj-job')">Job Board App</button>
-        <button class="side-btn" onclick="showProject(event, 'proj-symptom')">Symptom Checker</button>
-        <button class="side-btn" onclick="showProject(event, 'proj-interactive')">Interactive Calculator</button>
-    </div>
+        <div id="projects" class="tab-content card">
+            <div class="projects-layout">
+                
+                <!-- 1. Left Sidebar -->
+                <div class="projects-sidebar">
+                    <h3>Projects Menu</h3>
+                    <button class="side-btn active" onclick="showProject(event, 'proj-job')">Job Board App</button>
+                    <button class="side-btn" onclick="showProject(event, 'proj-symptom')">Symptom Checker</button>
+                    <button class="side-btn" onclick="showProject(event, 'proj-interactive')">Interactive Calculator</button>
+                </div>
 
-    <!-- 2. Right Content Area (በቀኝ በኩል ፕሮጀክቱ የሚታይበት ቦታ) -->
-    <div class="projects-main-content">
-        
-        <!-- Job Board App Pane -->
-        <div id="proj-job" class="project-pane active-pane">
-            <h2>Job Board App</h2>
-            <p>A job listing application featuring location-based filtering for job seekers.</p>
-            <div class="project-demo-box">
-                <iframe src="job-board.html" class="project-iframe"></iframe>
+                <!-- 2. Right Content Area -->
+                <div class="projects-main-content">
+                    
+                    <!-- Job Board App Pane -->
+                    <div id="proj-job" class="project-pane active-pane">
+                        <h2>Job Board App</h2>
+                        <p>A job listing application featuring location-based filtering for job seekers.</p>
+                        <div class="project-demo-box">
+                            <iframe src="job-board.html" class="project-iframe"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Symptom Checker Pane -->
+                    <div id="proj-symptom" class="project-pane">
+                        <h2>Symptom Checker</h2>
+                        <div class="project-demo-box">
+                            <iframe src="symptom-checker.html" class="project-iframe"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Calculator Pane -->
+                    <div id="proj-interactive" class="project-pane">
+                        <h2>Interactive Calculator</h2>
+                        <div class="project-demo-box">
+                            <iframe src="calculator.html" class="project-iframe"></iframe>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
 
-        <!-- Symptom Checker Pane -->
-        <div id="proj-symptom" class="project-pane">
-            <h2>Symptom Checker</h2>
-            <div class="project-demo-box">
-                <iframe src="symptom-checker.html" class="project-iframe"></iframe>
-            </div>
-        </div>
-
-        <!-- Interactive Calculator Pane -->
-        <div id="proj-interactive" class="project-pane">
-            <h2>Interactive Calculator</h2>
-            <div class="project-demo-box">
-                <iframe src="calculator.html" class="project-iframe"></iframe>
-            </div>
-        </div>
-
-    </div>
-</div>
         <!-- 📬 Contact Section -->
         <div id="contact" class="tab-content card">
             <h2>📫 Connect With Me</h2>
@@ -248,10 +248,8 @@
 
     </div>
 
-  
-       <!-- External JavaScript File Link -->
+    <!-- External JavaScript File Link -->
     <script src="script.js"></script>
-
 
 </body>
 </html>
