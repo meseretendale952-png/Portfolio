@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <!-- 🌐 Top Header (Home, About, Education, Contact) -->
+    <!-- 🌐 Top Header Navigation -->
     <header class="header-wrapper">
         <nav class="navbar">
             <a href="#" class="brand-logo-link" onclick="openTab(event, 'home')">
@@ -26,18 +26,26 @@
         </nav>
     </header>
 
-    <!-- 📂 Persistent Global Sidebar (Skills + Projects) -->
+    <!-- 📂 Persistent Global Sidebar (ለክሊን ዲዛይን በ <li> እና <a> የተዋቀረ) -->
     <aside class="global-sidebar">
-        <button id="sidebar-skills-link" class="sidebar-link" onclick="selectSkills(event)">📚 Skills</button>
-        <button id="sidebar-projects-link" class="sidebar-link" onclick="toggleProjectsMenu(event)">
-            <span>💻 Projects</span>
-            <span id="projects-arrow" class="sidebar-arrow">▸</span>
-        </button>
+        <ul class="sidebar-menu-list">
+            <li>
+                <a href="#" id="sidebar-skills-link" class="sidebar-link" onclick="selectSkills(event)">📚 Skills</a>
+            </li>
+            
+            <li class="sidebar-header-title">Projects</li>
+            <li>
+                <a href="#" id="sidebar-projects-link" class="sidebar-link" onclick="toggleProjectsMenu(event)">
+                    <span>💻 Projects</span>
+                    <span id="projects-arrow" class="sidebar-arrow">▸</span>
+                </a>
+            </li>
+        </ul>
 
         <div id="sidebar-sublist" class="sidebar-sublist">
-            <button class="sidebar-sublink" onclick="selectProject(event, 'proj-job')">📢 Job Board App</button>
-            <button class="sidebar-sublink" onclick="selectProject(event, 'proj-symptom')">🏥 Symptom Checker</button>
-            <button class="sidebar-sublink" onclick="selectProject(event, 'proj-interactive')">🧮 Interactive Calculator</button>
+            <a href="#" class="sidebar-sublink" onclick="selectProject(event, 'proj-job')">📢 Job Board App</a>
+            <a href="#" class="sidebar-sublink" onclick="selectProject(event, 'proj-symptom')">🏥 Symptom Checker</a>
+            <a href="#" class="sidebar-sublink" onclick="selectProject(event, 'proj-interactive')">🧮 Interactive Calculator</a>
         </div>
     </aside>
 
@@ -147,14 +155,14 @@
                 </div>
             </div>
 
-            <!-- 💻 Projects Section -->
+            <!-- 💻 Projects Section (scrolling="no" ተጨምሮበታል) -->
             <div id="projects" class="tab-content card">
                 <div class="projects-main-content">
                     <div id="proj-job" class="project-pane">
                         <h2>Job Board App</h2>
                         <p>A job listing application featuring location-based filtering for job seekers.</p>
                         <div class="project-demo-box">
-                            <iframe src="jobs-location.html" class="project-iframe"></iframe>
+                            <iframe src="jobs-location.html" class="project-iframe" scrolling="no"></iframe>
                         </div>
                     </div>
 
@@ -162,7 +170,7 @@
                         <h2>Symptom Checker</h2>
                         <p>An interactive system designed for basic health assessment and health awareness.</p>
                         <div class="project-demo-box">
-                            <iframe src="symptom-checker.html" class="project-iframe"></iframe>
+                            <iframe src="symptom-checker.html" class="project-iframe" scrolling="no"></iframe>
                         </div>
                     </div>
 
@@ -170,7 +178,7 @@
                         <h2>Interactive Calculator</h2>
                         <p>A responsive web calculator built with custom UI and pure JavaScript logic.</p>
                         <div class="project-demo-box">
-                            <iframe src="calculator.html" class="project-iframe"></iframe>
+                            <iframe src="calculator.html" class="project-iframe calculator-iframe" scrolling="no"></iframe>
                         </div>
                     </div>
                 </div>
