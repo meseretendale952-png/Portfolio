@@ -9,14 +9,14 @@
 </head>
 <body>
 
-    <!-- 🌐 Clean Header (Home, About, Education, Contact ብቻ አለው) -->
+    <!-- 🌐 Top Header (Home, About, Education, Contact) -->
     <header class="header-wrapper">
         <nav class="navbar">
             <a href="#" class="brand-logo-link" onclick="openTab(event, 'home')">
-             <img src="profile.jpg" alt="Meseret Endale" class="header-profile-logo">
+                <img src="profile.jpg" alt="Meseret Endale" class="header-profile-logo">
                 <span class="brand-name">MESERET ENDALE</span>
             </a>
-            
+
             <ul class="nav-links">
                 <li><a href="#" class="nav-btn active-link" onclick="openTab(event, 'home')">Home</a></li>
                 <li><a href="#" class="nav-btn" onclick="openTab(event, 'about')">About</a></li>
@@ -26,135 +26,137 @@
         </nav>
     </header>
 
-    <div class="container">
+    <!-- 📂 Persistent Left Sidebar (Skills + Projects) -->
+    <aside class="global-sidebar">
+        <button id="sidebar-skills-link" class="sidebar-link" onclick="selectSkills(event)">📚 Skills</button>
 
-        <!-- 🏠 Home Section -->
-        <div id="home" class="tab-content card active">
-            <div class="hero-logo-container">
-                <div class="circular-logo-wrapper">
-                    <svg viewBox="0 0 200 200" class="circular-text-svg">
-                        <path id="textPath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" fill="none"/>
-                        <text font-size="16" font-weight="700" fill="#0f172a" letter-spacing="3">
-                            <textPath href="#textPath" startOffset="0%">
-                                MESERET ENDALE • PORTFOLIO •
-                            </textPath>
-                        </text>
-                    </svg>
-                    <img src="profile.jpg" alt="Meseret" class="inner-profile-img" onerror="this.src='https://via.placeholder.com/160'">
+        <h4>Projects</h4>
+        <button id="sidebar-projects-link" class="sidebar-link" onclick="selectProject(event, 'proj-job')">💻 Projects</button>
+        <button class="sidebar-sublink active" onclick="selectProject(event, 'proj-job')">📢 Job Board App</button>
+        <button class="sidebar-sublink" onclick="selectProject(event, 'proj-symptom')">🏥 Symptom Checker</button>
+        <button class="sidebar-sublink" onclick="selectProject(event, 'proj-interactive')">🧮 Interactive Calculator</button>
+    </aside>
+
+    <div class="content-area">
+        <div class="container">
+
+            <!-- 🏠 Home Section -->
+            <div id="home" class="tab-content card active">
+                <div class="hero-logo-container">
+                    <div class="circular-logo-wrapper">
+                        <svg viewBox="0 0 200 200" class="circular-text-svg">
+                            <path id="textPath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" fill="none"/>
+                            <text font-size="16" font-weight="700" fill="#0f172a" letter-spacing="3">
+                                <textPath href="#textPath" startOffset="0%">
+                                    MESERET ENDALE • PORTFOLIO •
+                                </textPath>
+                            </text>
+                        </svg>
+                        <img src="profile.jpg" alt="Meseret" class="inner-profile-img" onerror="this.src='https://via.placeholder.com/160'">
+                    </div>
+                </div>
+
+                <div class="hero-intro">
+                    <span class="badge">Welcome to my Portfolio</span>
+                    <h1>Meseret Endale</h1>
+                    <p class="subtitle">🚀 COMPUTER SCIENCE STUDENT | PASSIONATE CODER | PROBLEM SOLVER</p>
+
+                    <hr class="section-divider">
+
+                    <p>Welcome to my personal portfolio! I am a Computer Science student who loves building modern software, designing web platforms, and solving complex problems.</p>
+
+                    <div class="quick-highlights">
+                        <div class="highlight-box">
+                            <h3>🎓 Education</h3>
+                            <p>Injibara University CS Student</p>
+                        </div>
+                        <div class="highlight-box">
+                            <h3>💻 Tech Stack</h3>
+                            <p>Python, C++, Java, JS, Web & Networking</p>
+                        </div>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <a href="#" class="btn primary-btn" onclick="selectProject(event, 'proj-job')">View My Projects →</a>
+                        <a href="#" class="btn secondary-btn" onclick="openTab(event, 'contact')">Get In Touch</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="hero-intro">
-                <span class="badge">Welcome to my Portfolio</span>
-                <h1>Meseret Endale</h1>
-                <p class="subtitle">🚀 COMPUTER SCIENCE STUDENT | PASSIONATE CODER | PROBLEM SOLVER</p>
-                
-                <hr class="section-divider">
-                
-                <p>Welcome to my personal portfolio! I am a Computer Science student who loves building modern software, designing web platforms, and solving complex problems.</p>
+            <!-- 👤 About Section -->
+            <div id="about" class="tab-content card">
+                <h2>About Me</h2>
+                <p>I am a dedicated Computer Science student with a strong drive for learning modern software technologies. My journey in tech spans software engineering, web application development, and system/network administration.</p>
 
-                <div class="quick-highlights">
+                <div class="quick-highlights" style="margin-top: 20px;">
                     <div class="highlight-box">
-                        <h3>🎓 Education</h3>
-                        <p>Injibara University CS Student</p>
+                        <h3>🎯 Core Focus</h3>
+                        <p>Building functional web applications, clean code architectures, and user-friendly solutions.</p>
                     </div>
                     <div class="highlight-box">
-                        <h3>💻 Tech Stack</h3>
-                        <p>Python, C++, Java, JS, Web & Networking</p>
+                        <h3>💡 Passion & Interests</h3>
+                        <p>Exploring Artificial Intelligence, Machine Learning models, and Computer Graphics.</p>
                     </div>
                 </div>
-
-                <div class="cta-buttons">
-                    <a href="#" class="btn primary-btn" onclick="openTab(event, 'projects')">View My Projects →</a>
-                    <a href="#" class="btn secondary-btn" onclick="openTab(event, 'contact')">Get In Touch</a>
-                </div>
             </div>
-        </div>
 
-        <!-- 👤 About Section -->
-        <div id="about" class="tab-content card">
-            <h2>About Me</h2>
-            <p>I am a dedicated Computer Science student with a strong drive for learning modern software technologies. My journey in tech spans software engineering, web application development, and system/network administration.</p>
-            
-            <div class="quick-highlights" style="margin-top: 20px;">
-                <div class="highlight-box">
-                    <h3>🎯 Core Focus</h3>
-                    <p>Building functional web applications, clean code architectures, and user-friendly solutions.</p>
-                </div>
-                <div class="highlight-box">
-                    <h3>💡 Passion & Interests</h3>
-                    <p>Exploring Artificial Intelligence, Machine Learning models, and Computer Graphics.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 🎓 Education Section -->
-        <div id="education" class="tab-content card">
-            <h2>Education</h2>
-            <div class="edu-item">
-                <span class="edu-icon">🎓</span>
-                <div>
-                    <strong>Computer Science Student</strong>
-                    <p>📍 Injibara University</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 📚 Skills Section (አሁን በ Sidebar በኩል እንዲመጣ ወይም በራሱ ገጽ እንዲሆን የተስተካከለ) -->
-        <div id="skills" class="tab-content card">
-            <h2>📚 Technical Skills</h2>
-            <div class="skills-container">
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <span class="skill-name">🐍 Python & Data Science</span>
-                        <span class="skill-level">Expert</span>
+            <!-- 🎓 Education Section -->
+            <div id="education" class="tab-content card">
+                <h2>Education</h2>
+                <div class="edu-item">
+                    <span class="edu-icon">🎓</span>
+                    <div>
+                        <strong>Computer Science Student</strong>
+                        <p>📍 Injibara University</p>
                     </div>
-                    <p class="skill-desc">Writing clean, modular Python code for advanced data analysis and machine learning models.</p>
-                    <div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <span class="skill-name">⚡ C++ & Microcontrollers</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                    <p class="skill-desc">Low-level programming, hardware execution loops, and embedded logic simulations.</p>
-                    <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <span class="skill-name">🌐 HTML / CSS / JS</span>
-                        <span class="skill-level">Expert</span>
-                    </div>
-                    <p class="skill-desc">Building modern, responsive frontend web platforms and UI/UX layouts.</p>
-                    <div class="progress-bar"><div class="progress-fill" style="width: 92%"></div></div>
                 </div>
             </div>
-        </div>
 
-        <!-- 💻 Projects Section (ግራ በኩል Sidebar ያለው) -->
-        <div id="projects" class="tab-content card">
-            <div class="projects-layout">
-                
-                <!-- Left Sidebar Menu -->
-                <div class="projects-sidebar">
-                    <h3>Projects Menu</h3>
-                    <button class="side-btn active" onclick="showProject(event, 'proj-job')">Job Board App</button>
-                    <button class="side-btn" onclick="showProject(event, 'proj-symptom')">Symptom Checker</button>
-                    <button class="side-btn" onclick="showProject(event, 'proj-interactive')">Interactive Calculator</button>
+            <!-- 📚 Skills Section -->
+            <div id="skills" class="tab-content card">
+                <h2>📚 Technical Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <span class="skill-name">🐍 Python & Data Science</span>
+                            <span class="skill-level">Expert</span>
+                        </div>
+                        <p class="skill-desc">Writing clean, modular Python code for advanced data analysis and machine learning models.</p>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <span class="skill-name">⚡ C++ & Microcontrollers</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <p class="skill-desc">Low-level programming, hardware execution loops, and embedded logic simulations.</p>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <span class="skill-name">🌐 HTML / CSS / JS</span>
+                            <span class="skill-level">Expert</span>
+                        </div>
+                        <p class="skill-desc">Building modern, responsive frontend web platforms and UI/UX layouts.</p>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 92%"></div></div>
+                    </div>
                 </div>
+            </div>
 
-                <!-- Right Content Area -->
+            <!-- 💻 Projects Section (ራሱ sidebar ውጪ ወጥቷል፣ panes ብቻ ይቀራሉ) -->
+            <div id="projects" class="tab-content card">
                 <div class="projects-main-content">
                     <div id="proj-job" class="project-pane active-pane">
                         <h2>Job Board App</h2>
                         <p>A job listing application featuring location-based filtering for job seekers.</p>
                         <div class="project-demo-box">
-                            <iframe src="job-board.html" class="project-iframe"></iframe>
+                            <iframe src="jobs-location.html" class="project-iframe"></iframe>
                         </div>
                     </div>
 
                     <div id="proj-symptom" class="project-pane">
                         <h2>Symptom Checker</h2>
+                        <p>An interactive system designed for basic health assessment and health awareness.</p>
                         <div class="project-demo-box">
                             <iframe src="symptom-checker.html" class="project-iframe"></iframe>
                         </div>
@@ -162,42 +164,41 @@
 
                     <div id="proj-interactive" class="project-pane">
                         <h2>Interactive Calculator</h2>
+                        <p>A responsive web calculator built with custom UI and pure JavaScript logic.</p>
                         <div class="project-demo-box">
                             <iframe src="calculator.html" class="project-iframe"></iframe>
                         </div>
                     </div>
                 </div>
-
             </div>
-        </div>
 
-        <!-- 📬 Contact Section -->
-        <div id="contact" class="tab-content card">
-            <h2>📫 Connect With Me</h2>
-            <div class="contact-links">
-                <a href="mailto:meseretendale952@gmail.com" class="contact-item">
-                    <span class="contact-icon">📧</span>
-                    <span class="contact-title">Email</span>
-                </a>
-                <a href="https://t.me/mesi_2e" target="_blank" class="contact-item">
-                    <span class="contact-icon">💬</span>
-                    <span class="contact-title">Telegram</span>
-                </a>
-                <a href="https://github.com/meseretendale952-png" target="_blank" class="contact-item">
-                    <span class="contact-icon">🐙</span>
-                    <span class="contact-title">GitHub</span>
-                </a>
+            <!-- 📬 Contact Section -->
+            <div id="contact" class="tab-content card">
+                <h2>📫 Connect With Me</h2>
+                <div class="contact-links">
+                    <a href="mailto:meseretendale952@gmail.com" class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span class="contact-title">Email</span>
+                    </a>
+                    <a href="https://t.me/mesi_2e" target="_blank" class="contact-item">
+                        <span class="contact-icon">💬</span>
+                        <span class="contact-title">Telegram</span>
+                    </a>
+                    <a href="https://github.com/meseretendale952-png" target="_blank" class="contact-item">
+                        <span class="contact-icon">🐙</span>
+                        <span class="contact-title">GitHub</span>
+                    </a>
+                </div>
             </div>
+
+            <!-- Footer -->
+            <footer class="site-footer">
+                <p>&copy; 2026 Meseret Endale. Computer Science Student.</p>
+            </footer>
+
         </div>
-
-        <!-- Footer -->
-        <footer class="site-footer">
-            <p>&copy; 2026 Meseret Endale. Computer Science Student.</p>
-        </footer>
-
     </div>
 
-    <!-- External JavaScript File Link -->
     <script src="script.js"></script>
 
 </body>
