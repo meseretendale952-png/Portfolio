@@ -398,7 +398,7 @@ p {
     color: #0f172a;
 }
 
-/* 🟦 Footer (ሙሉውን ስክሪን ከግራ እስከ ቀኝ እንዲሸፍን የተስተካከለ) */
+/* 🟦 Footer ሙሉውን ስክሪን ከግራ እስከ ቀኝ እንዲሸፍን እና ግርጌ ላይ እንዲሰካ */
 footer.site-footer {
     display: block !important;
     text-align: center !important;
