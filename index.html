@@ -26,15 +26,21 @@
         </nav>
     </header>
 
-    <!-- 📂 Persistent Left Sidebar (Skills + Projects) -->
+    <!-- 📂 Persistent Global Sidebar (Skills + Projects) -->
     <aside class="global-sidebar">
         <button id="sidebar-skills-link" class="sidebar-link" onclick="selectSkills(event)">📚 Skills</button>
 
         <h4>Projects</h4>
-        <button id="sidebar-projects-link" class="sidebar-link" onclick="selectProject(event, 'proj-job')">💻 Projects</button>
-        <button class="sidebar-sublink active" onclick="selectProject(event, 'proj-job')">📢 Job Board App</button>
-        <button class="sidebar-sublink" onclick="selectProject(event, 'proj-symptom')">🏥 Symptom Checker</button>
-        <button class="sidebar-sublink" onclick="selectProject(event, 'proj-interactive')">🧮 Interactive Calculator</button>
+        <button id="sidebar-projects-link" class="sidebar-link" onclick="toggleProjectsMenu(event)">
+            <span>💻 Projects</span>
+            <span id="projects-arrow" class="sidebar-arrow">▸</span>
+        </button>
+
+        <div id="sidebar-sublist" class="sidebar-sublist">
+            <button class="sidebar-sublink" onclick="selectProject(event, 'proj-job')">📢 Job Board App</button>
+            <button class="sidebar-sublink" onclick="selectProject(event, 'proj-symptom')">🏥 Symptom Checker</button>
+            <button class="sidebar-sublink" onclick="selectProject(event, 'proj-interactive')">🧮 Interactive Calculator</button>
+        </div>
     </aside>
 
     <div class="content-area">
@@ -77,7 +83,7 @@
                     </div>
 
                     <div class="cta-buttons">
-                        <a href="#" class="btn primary-btn" onclick="selectProject(event, 'proj-job')">View My Projects →</a>
+                        <a href="#" class="btn primary-btn" onclick="toggleProjectsMenu(event); selectProject(event, 'proj-job')">View My Projects →</a>
                         <a href="#" class="btn secondary-btn" onclick="openTab(event, 'contact')">Get In Touch</a>
                     </div>
                 </div>
@@ -143,10 +149,10 @@
                 </div>
             </div>
 
-            <!-- 💻 Projects Section (ራሱ sidebar ውጪ ወጥቷል፣ panes ብቻ ይቀራሉ) -->
+            <!-- 💻 Projects Section -->
             <div id="projects" class="tab-content card">
                 <div class="projects-main-content">
-                    <div id="proj-job" class="project-pane active-pane">
+                    <div id="proj-job" class="project-pane">
                         <h2>Job Board App</h2>
                         <p>A job listing application featuring location-based filtering for job seekers.</p>
                         <div class="project-demo-box">
@@ -200,6 +206,5 @@
     </div>
 
     <script src="script.js"></script>
-
 </body>
 </html>
