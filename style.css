@@ -402,21 +402,25 @@ p {
     margin: 0;
 }
 
-.footer {
-    text-align: center;
-    margin-top: 40px;
-    padding: 10px;
-    background: transparent !important; /* የጀርባ ቦክሱን ሙሉ በሙሉ ያጠፋዋል */
+/* ከካርዱ ውጭ ያለውን <footer> ሙሉ በሙሉ መሃል ለማድረግ */
+footer.site-footer {
+    display: block !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin: 40px auto 20px auto !important;
+    padding: 10px !important;
+    background: transparent !important;
     box-shadow: none !important;
-    user-select: none; /* ሲጫኑ ሰማያዊ ከለላ እንዳያመጣ */
 }
 
-.footer p {
-    color: #ffffff !important; /* ደማቅ ነጭ ጽሁፍ */
-    font-size: 0.95rem;
-    font-weight: 500;
-    margin: 0;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7); /* ከዳራው ጋር ጎልቶ እንዲታይ የጽሁፍ ጥላ ብቻ */
+footer.site-footer p {
+    color: #ffffff !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    user-select: none !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;
 }
 @media (max-width: 768px) {
     body {
