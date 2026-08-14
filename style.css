@@ -39,6 +39,7 @@ body, html {
     margin-bottom: 20px;
 }
 
+/* Header & Navbar - Consistent Styling */
 .header-wrapper {
     position: fixed;
     top: 0;
@@ -47,7 +48,7 @@ body, html {
     background: rgba(52, 76, 212, 0.95);
     backdrop-filter: blur(12px);
     z-index: 1000;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .navbar {
@@ -57,14 +58,6 @@ body, html {
     justify-content: space-between;
     align-items: center;
     padding: 0 8%;
-}
-
-.brand-text {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: white;
-    text-decoration: none;
-    letter-spacing: 1px;
 }
 
 .nav-links {
@@ -85,12 +78,12 @@ body, html {
 
 .nav-links a:hover, .nav-links a.active-link {
     color: #ffffff;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
 }
 
 /* =========================================
-   📂 Persistent Global Sidebar (Skills + Projects)
+   📂 Persistent Global Sidebar
    ========================================= */
 .global-sidebar {
     position: fixed;
@@ -98,46 +91,68 @@ body, html {
     left: 0;
     width: 220px;
     height: calc(100vh - 80px);
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(52, 76, 212, 0.95);
     backdrop-filter: blur(10px);
     padding: 20px 15px;
     overflow-y: auto;
     z-index: 900;
-    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .global-sidebar h4 {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.7);
     margin: 18px 0 8px;
 }
 
 .sidebar-link {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     text-align: left;
     padding: 12px 14px;
     margin-bottom: 6px;
-    background: #f7fafc;
-    border: 1px solid #e2e8f0;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     font-weight: 700;
     font-size: 0.9rem;
-    color: #4a5568;
+    color: #ffffff;
     cursor: pointer;
 }
 
 .sidebar-link:hover {
-    background: #edf2f7;
-    color: #2b6cb0;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
 }
 
 .sidebar-link.active {
-    background: #3182ce;
+    background: rgba(255, 255, 255, 0.28);
     color: #ffffff;
-    border-color: #3182ce;
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-arrow {
+    font-size: 0.8rem;
+    transition: transform 0.25s ease;
+}
+
+.sidebar-arrow.rotated {
+    transform: rotate(90deg);
+}
+
+.sidebar-sublist {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.sidebar-sublist.expanded {
+    max-height: 300px;
 }
 
 .sidebar-sublink {
@@ -146,23 +161,24 @@ body, html {
     text-align: left;
     padding: 9px 12px 9px 20px;
     margin-bottom: 4px;
+    margin-top: 6px;
     background: transparent;
     border: none;
-    border-left: 2px solid #e2e8f0;
+    border-left: 2px solid rgba(255, 255, 255, 0.25);
     font-size: 0.85rem;
     font-weight: 500;
-    color: #64748b;
+    color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
 }
 
 .sidebar-sublink:hover {
-    color: #2b6cb0;
+    color: #ffffff;
 }
 
 .sidebar-sublink.active {
-    color: #2563eb;
+    color: #ffffff;
     font-weight: 700;
-    border-left-color: #2563eb;
+    border-left-color: #ffffff;
 }
 
 .content-area {
@@ -378,7 +394,6 @@ p {
     margin-bottom: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     min-height: 180px;
-    transition: transform 0.3s ease;
 }
 
 .skill-header {
@@ -415,16 +430,6 @@ p {
     height: 100%;
     background: var(--accent-gradient);
     border-radius: 10px;
-}
-
-.btn-disabled {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #cbd5e1;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    border-radius: 10px;
-    text-align: center;
 }
 
 .contact-links {
@@ -499,9 +504,6 @@ footer.site-footer p {
     letter-spacing: 0.5px;
 }
 
-/* =========================================
-   💻 Projects Content (panes ብቻ - sidebar ውጪ ወጥቷል)
-   ========================================= */
 .projects-main-content {
     max-width: 900px;
 }
@@ -549,21 +551,6 @@ footer.site-footer p {
         width: 160px;
         height: 160px;
     }
-    .nav-links {
-        gap: 2px;
-    }
-    .nav-links a {
-        font-size: 0.8rem;
-        padding: 6px 8px;
-    }
-    .quick-highlights {
-        grid-template-columns: 1fr;
-    }
-    .cta-buttons {
-        flex-direction: column;
-    }
-
-    /* ሞባይል ላይ sidebar ወደ ላይ አግድም (horizontal) ይሆናል */
     .global-sidebar {
         position: static;
         width: 100%;
@@ -572,7 +559,7 @@ footer.site-footer p {
         flex-wrap: wrap;
         gap: 8px;
         border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         padding: 12px 15px;
     }
     .global-sidebar h4 {
@@ -582,6 +569,13 @@ footer.site-footer p {
     .sidebar-link, .sidebar-sublink {
         width: auto;
         margin-bottom: 0;
+    }
+    .sidebar-sublist {
+        width: 100%;
+        max-height: 0;
+    }
+    .sidebar-sublist.expanded {
+        max-height: 200px;
     }
     .content-area {
         margin-left: 0;
