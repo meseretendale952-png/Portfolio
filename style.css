@@ -403,22 +403,22 @@ p {
 }
 
 .footer {
-    text-align: center !important;
-    margin-top: 30px !important;
-    padding: 15px !important;
-    background-color: #0f172a !important; /* ጠቆር ያለ ደማቅ ዳራ */
-    border-radius: 8px !important;
-    width: 100% !important;
-    max-width: 400px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background: rgba(15, 23, 42, 0.85); /* ጽሁፉ ከዳራው ጋር እንዳይመሳሰል ጠቆር ያለ ግልጽ ቦክስ */
+    border-radius: 8px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    user-select: none; /* ጽሁፉ ላይ ሲጫኑ ሰማያዊ ከለላ አድርጎ እንዳይመረጥ የሚከለክል */
 }
 
 .footer p {
     color: #ffffff !important; /* ደማቅ ነጭ ጽሁፍ */
-    font-size: 0.95rem !important;
-    font-weight: bold !important;
-    margin: 0 !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0;
 }
 @media (max-width: 768px) {
     body {
