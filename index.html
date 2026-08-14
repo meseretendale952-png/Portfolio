@@ -2,22 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Meseret Endale | Portfolio</title>
+    <title>Meseret Endale | CS Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 🌐 Top Header / Navbar -->
+    <!-- 🌐 Top Header (Home, About, Education, Contact) -->
     <header class="header-wrapper">
         <nav class="navbar">
             <a href="#" class="brand-logo-link" onclick="openTab(event, 'home')">
                 <img src="profile.jpg" alt="Meseret Endale" class="header-profile-logo">
                 <span class="brand-name">MESERET ENDALE</span>
             </a>
-            
-            <!-- ከላይ የሚታዩት 4ቱ ብቻ ናቸው -->
+
             <ul class="nav-links">
                 <li><a href="#" class="nav-btn active-link" onclick="openTab(event, 'home')">Home</a></li>
                 <li><a href="#" class="nav-btn" onclick="openTab(event, 'about')">About</a></li>
@@ -27,108 +26,180 @@
         </nav>
     </header>
 
-    <!-- 📐 Main Layout with Sidebar and Content -->
-    <div class="main-layout-container">
+    <!-- 📂 Persistent Left Sidebar (Skills + Projects) -->
+    <aside class="global-sidebar">
+        <button id="sidebar-skills-link" class="sidebar-link" onclick="selectSkills(event)">📚 Skills</button>
 
-        <!-- 📌 1. Left Sidebar (በወረቀት ላይ እንደሳልከው) -->
-        <aside class="left-sidebar">
-            
-            <!-- Skill Section Link -->
-            <div class="sidebar-section">
-                <button class="side-nav-btn" onclick="openTab(event, 'skills')">
-                    📌 Skill
-                </button>
-            </div>
+        <h4>Projects</h4>
+        <button id="sidebar-projects-link" class="sidebar-link" onclick="selectProject(event, 'proj-job')">💻 Projects</button>
+        <button class="sidebar-sublink active" onclick="selectProject(event, 'proj-job')">📢 Job Board App</button>
+        <button class="sidebar-sublink" onclick="selectProject(event, 'proj-symptom')">🏥 Symptom Checker</button>
+        <button class="sidebar-sublink" onclick="selectProject(event, 'proj-interactive')">🧮 Interactive Calculator</button>
+    </aside>
 
-            <!-- Project Section with Sub-items -->
-            <div class="sidebar-section">
-                <span class="sidebar-title">📁 Project</span>
-                <ul class="sub-project-list">
-                    <li><button class="sub-side-btn active-sub" onclick="openProjectTab(event, 'proj-interactive')">- Calculator</button></li>
-                    <li><button class="sub-side-btn" onclick="openProjectTab(event, 'proj-symptom')">- Symptom</button></li>
-                    <li><button class="sub-side-btn" onclick="openProjectTab(event, 'proj-job')">- Job Board</button></li>
-                </ul>
-            </div>
-
-        </aside>
-
-        <!-- 📄 2. Right Main Display Area -->
-        <main class="main-display-area">
+    <div class="content-area">
+        <div class="container">
 
             <!-- 🏠 Home Section -->
             <div id="home" class="tab-content card active">
+                <div class="hero-logo-container">
+                    <div class="circular-logo-wrapper">
+                        <svg viewBox="0 0 200 200" class="circular-text-svg">
+                            <path id="textPath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" fill="none"/>
+                            <text font-size="16" font-weight="700" fill="#0f172a" letter-spacing="3">
+                                <textPath href="#textPath" startOffset="0%">
+                                    MESERET ENDALE • PORTFOLIO •
+                                </textPath>
+                            </text>
+                        </svg>
+                        <img src="profile.jpg" alt="Meseret" class="inner-profile-img" onerror="this.src='https://via.placeholder.com/160'">
+                    </div>
+                </div>
+
                 <div class="hero-intro">
                     <span class="badge">Welcome to my Portfolio</span>
                     <h1>Meseret Endale</h1>
-                    <p class="subtitle">🚀 COMPUTER SCIENCE STUDENT | PASSIONATE CODER</p>
+                    <p class="subtitle">🚀 COMPUTER SCIENCE STUDENT | PASSIONATE CODER | PROBLEM SOLVER</p>
+
                     <hr class="section-divider">
-                    <p>Welcome to my personal portfolio! I am a Computer Science student who loves building modern software and solving complex problems.</p>
+
+                    <p>Welcome to my personal portfolio! I am a Computer Science student who loves building modern software, designing web platforms, and solving complex problems.</p>
+
+                    <div class="quick-highlights">
+                        <div class="highlight-box">
+                            <h3>🎓 Education</h3>
+                            <p>Injibara University CS Student</p>
+                        </div>
+                        <div class="highlight-box">
+                            <h3>💻 Tech Stack</h3>
+                            <p>Python, C++, Java, JS, Web & Networking</p>
+                        </div>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <a href="#" class="btn primary-btn" onclick="selectProject(event, 'proj-job')">View My Projects →</a>
+                        <a href="#" class="btn secondary-btn" onclick="openTab(event, 'contact')">Get In Touch</a>
+                    </div>
                 </div>
             </div>
 
             <!-- 👤 About Section -->
             <div id="about" class="tab-content card">
                 <h2>About Me</h2>
-                <p>I am a dedicated Computer Science student with a strong drive for learning modern software technologies.</p>
+                <p>I am a dedicated Computer Science student with a strong drive for learning modern software technologies. My journey in tech spans software engineering, web application development, and system/network administration.</p>
+
+                <div class="quick-highlights" style="margin-top: 20px;">
+                    <div class="highlight-box">
+                        <h3>🎯 Core Focus</h3>
+                        <p>Building functional web applications, clean code architectures, and user-friendly solutions.</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h3>💡 Passion & Interests</h3>
+                        <p>Exploring Artificial Intelligence, Machine Learning models, and Computer Graphics.</p>
+                    </div>
+                </div>
             </div>
 
             <!-- 🎓 Education Section -->
             <div id="education" class="tab-content card">
                 <h2>Education</h2>
-                <p>🎓 Computer Science Student - Injibara University</p>
+                <div class="edu-item">
+                    <span class="edu-icon">🎓</span>
+                    <div>
+                        <strong>Computer Science Student</strong>
+                        <p>📍 Injibara University</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- 📚 Skills Section (ከሳይድባር ሲነካ የሚከፈት) -->
+            <!-- 📚 Skills Section -->
             <div id="skills" class="tab-content card">
                 <h2>📚 Technical Skills</h2>
                 <div class="skills-container">
                     <div class="skill-card">
-                        <h3>🐍 Python & Data Science</h3>
-                        <p>Data analysis, machine learning models, and dataset classification.</p>
+                        <div class="skill-header">
+                            <span class="skill-name">🐍 Python & Data Science</span>
+                            <span class="skill-level">Expert</span>
+                        </div>
+                        <p class="skill-desc">Writing clean, modular Python code for advanced data analysis and machine learning models.</p>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div>
                     </div>
                     <div class="skill-card">
-                        <h3>⚡ C++ & Microcontrollers</h3>
-                        <p>Low-level programming and hardware simulation.</p>
+                        <div class="skill-header">
+                            <span class="skill-name">⚡ C++ & Microcontrollers</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <p class="skill-desc">Low-level programming, hardware execution loops, and embedded logic simulations.</p>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
                     </div>
                     <div class="skill-card">
-                        <h3>🌐 HTML / CSS / JS</h3>
-                        <p>Responsive web applications and frontend engineering.</p>
+                        <div class="skill-header">
+                            <span class="skill-name">🌐 HTML / CSS / JS</span>
+                            <span class="skill-level">Expert</span>
+                        </div>
+                        <p class="skill-desc">Building modern, responsive frontend web platforms and UI/UX layouts.</p>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 92%"></div></div>
                     </div>
                 </div>
             </div>
 
-            <!-- 💻 Project Content Panes (ከሳይድባር ስር ያሉት - Calculator, Symptom, Job Board) -->
-            <div id="proj-interactive" class="tab-content project-pane card active-project">
-                <h2>Interactive Calculator</h2>
-                <div class="project-demo-box">
-                    <iframe src="calculator.html" class="project-iframe"></iframe>
-                </div>
-            </div>
+            <!-- 💻 Projects Section (ራሱ sidebar ውጪ ወጥቷል፣ panes ብቻ ይቀራሉ) -->
+            <div id="projects" class="tab-content card">
+                <div class="projects-main-content">
+                    <div id="proj-job" class="project-pane active-pane">
+                        <h2>Job Board App</h2>
+                        <p>A job listing application featuring location-based filtering for job seekers.</p>
+                        <div class="project-demo-box">
+                            <iframe src="jobs-location.html" class="project-iframe"></iframe>
+                        </div>
+                    </div>
 
-            <div id="proj-symptom" class="tab-content project-pane card">
-                <h2>Symptom Checker</h2>
-                <div class="project-demo-box">
-                    <iframe src="symptom-checker.html" class="project-iframe"></iframe>
-                </div>
-            </div>
+                    <div id="proj-symptom" class="project-pane">
+                        <h2>Symptom Checker</h2>
+                        <p>An interactive system designed for basic health assessment and health awareness.</p>
+                        <div class="project-demo-box">
+                            <iframe src="symptom-checker.html" class="project-iframe"></iframe>
+                        </div>
+                    </div>
 
-            <div id="proj-job" class="tab-content project-pane card">
-                <h2>Job Board App</h2>
-                <div class="project-demo-box">
-                    <iframe src="job-board.html" class="project-iframe"></iframe>
+                    <div id="proj-interactive" class="project-pane">
+                        <h2>Interactive Calculator</h2>
+                        <p>A responsive web calculator built with custom UI and pure JavaScript logic.</p>
+                        <div class="project-demo-box">
+                            <iframe src="calculator.html" class="project-iframe"></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- 📬 Contact Section -->
             <div id="contact" class="tab-content card">
                 <h2>📫 Connect With Me</h2>
-                <p>Email: meseretendale952@gmail.com</p>
+                <div class="contact-links">
+                    <a href="mailto:meseretendale952@gmail.com" class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span class="contact-title">Email</span>
+                    </a>
+                    <a href="https://t.me/mesi_2e" target="_blank" class="contact-item">
+                        <span class="contact-icon">💬</span>
+                        <span class="contact-title">Telegram</span>
+                    </a>
+                    <a href="https://github.com/meseretendale952-png" target="_blank" class="contact-item">
+                        <span class="contact-icon">🐙</span>
+                        <span class="contact-title">GitHub</span>
+                    </a>
+                </div>
             </div>
 
-        </main>
+            <!-- Footer -->
+            <footer class="site-footer">
+                <p>&copy; 2026 Meseret Endale. Computer Science Student.</p>
+            </footer>
 
+        </div>
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
