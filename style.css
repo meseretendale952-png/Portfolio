@@ -107,17 +107,18 @@ body, html {
     margin: 18px 0 8px 10px;
 }
 
+/* ቦክሶች ጠፍተው ልክ እንደ ቶፕ ባር ጽሁፍ ብቻ እንዲሆኑ የተደረገበት ክፍል */
 .sidebar-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     text-align: left;
-    padding: 10px 12px;
-    margin-bottom: 4px;
-    background: transparent;
-    border: none;
-    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 10px;
     font-weight: 500;
     font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.9);
@@ -125,12 +126,12 @@ body, html {
 }
 
 .sidebar-link:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.15) !important;
     color: #ffffff;
 }
 
 .sidebar-link.active {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.2) !important;
     color: #ffffff;
     font-weight: 600;
 }
@@ -161,9 +162,10 @@ body, html {
     padding: 8px 10px 8px 16px;
     margin-bottom: 2px;
     margin-top: 4px;
-    background: transparent;
-    border: none;
+    background: transparent !important;
+    border: none !important;
     border-left: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 0 8px 8px 0;
     font-size: 0.85rem;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.75);
@@ -172,6 +174,7 @@ body, html {
 
 .sidebar-sublink:hover {
     color: #ffffff;
+    background: rgba(255, 255, 255, 0.1) !important;
     border-left-color: #ffffff;
 }
 
@@ -179,7 +182,7 @@ body, html {
     color: #ffffff;
     font-weight: 600;
     border-left-color: #ffffff;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2) !important;
 }
 
 .content-area {
@@ -520,16 +523,15 @@ footer.site-footer p {
 /* iframe የራሱ ስክሮል እንዳይኖረው የተስተካከለ ክፍል */
 .project-demo-box {
     width: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    background: transparent;
     margin-top: 15px;
     overflow: visible;
 }
 
 .project-iframe {
     width: 100%;
-    height: 1200px;
+    height: 1100px;
     border: none;
     display: block;
     background: transparent;
@@ -588,6 +590,6 @@ footer.site-footer p {
         height: auto;
     }
     .project-iframe {
-        height: 1000px;
+        height: 950px;
     }
 }
