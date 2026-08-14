@@ -1,3 +1,4 @@
+// 🌐 Top navbar tab switching (Home, About, Education, Skills, Projects, Contact)
 function openTab(evt, tabName) {
     if (evt) evt.preventDefault();
 
@@ -19,70 +20,28 @@ function openTab(evt, tabName) {
         }
     }
 
-    clearSidebarActive();
     window.scrollTo(0, 0);
 }
 
-function selectSkills(evt) {
-    if (evt) evt.preventDefault();
-    openTab(null, 'skills');
-
-    clearSidebarActive();
-    document.getElementById('sidebar-skills-link').classList.add('active');
-
-    document.getElementById('sidebar-sublist').classList.remove('expanded');
-    document.getElementById('projects-arrow').classList.remove('rotated');
-}
-
-function toggleProjectsMenu(evt) {
+// 💻 Projects ገጽ ውስጥ ያሉትን ንዑስ ቁልፎች (Job Board / Symptom Checker / Calculator) መቀያየሪያ
+function selectProjectTab(evt, paneId) {
     if (evt) evt.preventDefault();
 
-    var sublist = document.getElementById('sidebar-sublist');
-    var arrow = document.getElementById('projects-arrow');
-
-    sublist.classList.toggle('expanded');
-    arrow.classList.toggle('rotated');
-
-    clearSidebarActive();
-    document.getElementById('sidebar-projects-link').classList.add('active');
-}
-
-function selectProject(evt, paneId) {
-    if (evt) evt.preventDefault();
-    openTab(null, 'projects');
-
+    // ፓኔሎቹን (project-pane) መቀያየር
     var panes = document.getElementsByClassName('project-pane');
     for (var i = 0; i < panes.length; i++) {
         panes[i].classList.remove('active-pane');
     }
     document.getElementById(paneId).classList.add('active-pane');
 
-    // Projects ሲጫን ንዑስ ዝርዝሩ እንዲከፈት እና አሮው (arrow) እንዲዞር ማድረግ
-    var sublist = document.getElementById('sidebar-sublist');
-    var arrow = document.getElementById('projects-arrow');
-    sublist.classList.add('expanded');
-    arrow.classList.add('rotated');
-
-    clearSidebarActive();
-    document.getElementById('sidebar-projects-link').classList.add('active');
-
-    var subs = document.getElementsByClassName('sidebar-sublink');
-    for (var i = 0; i < subs.length; i++) {
-        if (subs[i].getAttribute("onclick") && subs[i].getAttribute("onclick").includes("'" + paneId + "'")) {
-            subs[i].classList.add('active');
-        }
+    // ንዑስ ቁልፎቹ ላይ ያለውን active-sub ማዘመን
+    var subButtons = document.querySelectorAll('.project-sub-tabs .btn');
+    for (var i = 0; i < subButtons.length; i++) {
+        subButtons[i].classList.remove('active-sub');
+    }
+    if (evt && evt.currentTarget) {
+        evt.currentTarget.classList.add('active-sub');
     }
 
     window.scrollTo(0, 0);
-}
-
-function clearSidebarActive() {
-    var mains = document.getElementsByClassName('sidebar-link');
-    for (var i = 0; i < mains.length; i++) {
-        mains[i].classList.remove('active');
-    }
-    var subs = document.getElementsByClassName('sidebar-sublink');
-    for (var i = 0; i < subs.length; i++) {
-        subs[i].classList.remove('active');
-    }
 }
