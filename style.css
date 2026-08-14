@@ -18,20 +18,18 @@
 body, html {
     font-family: 'Poppins', sans-serif;
     background-image: url('https://static.vecteezy.com/system/resources/thumbnails/081/998/020/small_2x/sunrise-scene-with-gradient-sky-and-yellow-sun-digital-illustration-vector.jpg') !important;
-    background-size: 100% 100% !important;
+    background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
     background-attachment: fixed !important;
     color: #1e293b;
-    margin: 0;
-    padding: 0;
     width: 100%;
     min-height: 100vh;
     padding-top: 80px;
 }
 
 .highlight-box, .edu-item, .skill-card, .project-card, .contact-item {
-    background: rgba(255, 255, 255, 0.7) !important;
+    background: rgba(255, 255, 255, 0.75) !important;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 15px;
@@ -82,7 +80,6 @@ body, html {
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
 }
 
-/* ❌ Sidebar ሙሉ በሙሉ ስለጠፋ የ Content Area ህ ማርጅን 0 ተደርጓል */
 .content-area {
     margin-left: 0 !important;
     width: 100%;
@@ -124,8 +121,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 30px 0;
 }
 
 .circular-logo-wrapper {
@@ -440,7 +436,6 @@ footer.site-footer p {
     border: none;
     display: block;
     background: transparent;
-    overflow: hidden;
 }
 
 .calculator-iframe {
