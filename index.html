@@ -21,34 +21,14 @@
                 <li><a href="#" class="nav-btn active-link" onclick="openTab(event, 'home')">Home</a></li>
                 <li><a href="#" class="nav-btn" onclick="openTab(event, 'about')">About</a></li>
                 <li><a href="#" class="nav-btn" onclick="openTab(event, 'education')">Education</a></li>
+                <li><a href="#" class="nav-btn" onclick="openTab(event, 'skills')">Skills</a></li>
+                <li><a href="#" class="nav-btn" onclick="openTab(event, 'projects')">Projects</a></li>
                 <li><a href="#" class="nav-btn" onclick="openTab(event, 'contact')">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- 📂 Persistent Global Sidebar (ለክሊን ዲዛይን በ <li> እና <a> የተዋቀረ) -->
-    <aside class="global-sidebar">
-        <ul class="sidebar-menu-list">
-            <li>
-                <a href="#" id="sidebar-skills-link" class="sidebar-link" onclick="selectSkills(event)">📚 Skills</a>
-            </li>
-            
-            <li class="sidebar-header-title">Projects</li>
-            <li>
-                <a href="#" id="sidebar-projects-link" class="sidebar-link" onclick="toggleProjectsMenu(event)">
-                    <span>💻 Projects</span>
-                    <span id="projects-arrow" class="sidebar-arrow">▸</span>
-                </a>
-            </li>
-        </ul>
-
-        <div id="sidebar-sublist" class="sidebar-sublist">
-            <a href="#" class="sidebar-sublink" onclick="selectProject(event, 'proj-job')">📢 Job Board App</a>
-            <a href="#" class="sidebar-sublink" onclick="selectProject(event, 'proj-symptom')">🏥 Symptom Checker</a>
-            <a href="#" class="sidebar-sublink" onclick="selectProject(event, 'proj-interactive')">🧮 Interactive Calculator</a>
-        </div>
-    </aside>
-
+    <!-- 📂 Content Area -->
     <div class="content-area">
         <div class="container">
 
@@ -89,7 +69,7 @@
                     </div>
 
                     <div class="cta-buttons">
-                        <a href="#" class="btn primary-btn" onclick="toggleProjectsMenu(event); selectProject(event, 'proj-job')">View My Projects →</a>
+                        <a href="#" class="btn primary-btn" onclick="openTab(event, 'projects')">View My Projects →</a>
                         <a href="#" class="btn secondary-btn" onclick="openTab(event, 'contact')">Get In Touch</a>
                     </div>
                 </div>
@@ -155,30 +135,31 @@
                 </div>
             </div>
 
-            <!-- 💻 Projects Section (scrolling="no" ተጨምሮበታል) -->
+            <!-- 💻 Projects Section -->
             <div id="projects" class="tab-content card">
+                <h2>Projects</h2>
+                <div class="project-sub-tabs" style="margin-bottom: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
+                    <button class="btn secondary-btn active-sub" onclick="selectProjectTab(event, 'proj-job')">📢 Job Board App</button>
+                    <button class="btn secondary-btn" onclick="selectProjectTab(event, 'proj-symptom')">🏥 Symptom Checker</button>
+                    <button class="btn secondary-btn" onclick="selectProjectTab(event, 'proj-interactive')">🧮 Interactive Calculator</button>
+                </div>
+
                 <div class="projects-main-content">
-                    <div id="proj-job" class="project-pane">
-                        <h2>Job Board App</h2>
-                        <p>A job listing application featuring location-based filtering for job seekers.</p>
+                    <div id="proj-job" class="project-pane active-pane">
                         <div class="project-demo-box">
-                            <iframe src="jobs-location.html" class="project-iframe" scrolling="no"></iframe>
+                            <iframe src="jobs-location.html" class="project-iframe" scrolling="yes"></iframe>
                         </div>
                     </div>
 
                     <div id="proj-symptom" class="project-pane">
-                        <h2>Symptom Checker</h2>
-                        <p>An interactive system designed for basic health assessment and health awareness.</p>
                         <div class="project-demo-box">
-                            <iframe src="symptom-checker.html" class="project-iframe" scrolling="no"></iframe>
+                            <iframe src="symptom-checker.html" class="project-iframe" scrolling="yes"></iframe>
                         </div>
                     </div>
 
                     <div id="proj-interactive" class="project-pane">
-                        <h2>Interactive Calculator</h2>
-                        <p>A responsive web calculator built with custom UI and pure JavaScript logic.</p>
                         <div class="project-demo-box">
-                            <iframe src="calculator.html" class="project-iframe calculator-iframe" scrolling="no"></iframe>
+                            <iframe src="calculator.html" class="project-iframe calculator-iframe" scrolling="yes"></iframe>
                         </div>
                     </div>
                 </div>
