@@ -1,4 +1,3 @@
-// 🌐 Top navbar (Home, About, Education, Contact) tab switching
 function openTab(evt, tabName) {
     if (evt) evt.preventDefault();
 
@@ -20,22 +19,34 @@ function openTab(evt, tabName) {
         }
     }
 
-    // Home/About/Education/Contact ወደ ተጫነ ሲባል sidebar highlight ማጥፋት
     clearSidebarActive();
-
     window.scrollTo(0, 0);
 }
 
-// 📚 Skills sidebar link
 function selectSkills(evt) {
     if (evt) evt.preventDefault();
     openTab(null, 'skills');
 
     clearSidebarActive();
     document.getElementById('sidebar-skills-link').classList.add('active');
+
+    document.getElementById('sidebar-sublist').classList.remove('expanded');
+    document.getElementById('projects-arrow').classList.remove('rotated');
 }
 
-// 💻 Projects sidebar links (main + sub items)
+function toggleProjectsMenu(evt) {
+    if (evt) evt.preventDefault();
+
+    var sublist = document.getElementById('sidebar-sublist');
+    var arrow = document.getElementById('projects-arrow');
+
+    sublist.classList.toggle('expanded');
+    arrow.classList.toggle('rotated');
+
+    clearSidebarActive();
+    document.getElementById('sidebar-projects-link').classList.add('active');
+}
+
 function selectProject(evt, paneId) {
     if (evt) evt.preventDefault();
     openTab(null, 'projects');
@@ -45,6 +56,12 @@ function selectProject(evt, paneId) {
         panes[i].classList.remove('active-pane');
     }
     document.getElementById(paneId).classList.add('active-pane');
+
+    // Projects ሲጫን ንዑስ ዝርዝሩ እንዲከፈት እና አሮው (arrow) እንዲዞር ማድረግ
+    var sublist = document.getElementById('sidebar-sublist');
+    var arrow = document.getElementById('projects-arrow');
+    sublist.classList.add('expanded');
+    arrow.classList.add('rotated');
 
     clearSidebarActive();
     document.getElementById('sidebar-projects-link').classList.add('active');
