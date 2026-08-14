@@ -367,26 +367,27 @@ p {
     color: #0f172a;
 }
 
+/* የ Footer ሰማያዊ ዳራ እና ዲዛይን */
 footer.site-footer {
     display: block !important;
     text-align: center !important;
     width: 100% !important;
-    margin: 40px auto 20px auto !important;
-    padding: 10px !important;
-    background: transparent !important;
-    box-shadow: none !important;
+    margin: 40px 0 0 0 !important;
+    padding: 25px 20px !important;
+    background-color: #344cd4 !important; /* የሰማያዊ ዳራ ቀለም */
+    background: linear-gradient(135deg, #344cd4 0%, #2563eb 100%) !important;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1) !important;
+    border-top: 2px solid rgba(255, 255, 255, 0.2) !important;
 }
 
 footer.site-footer p {
     color: #ffffff !important;
-    font-size: 0.95rem !important;
+    font-size: 1rem !important;
     font-weight: 500 !important;
     text-align: center !important;
     margin: 0 auto !important;
-    user-select: none !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
 }
-
 .brand-logo-link {
     display: flex;
     align-items: center;
