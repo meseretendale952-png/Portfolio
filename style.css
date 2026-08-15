@@ -399,12 +399,21 @@ p {
     text-align: center;
 }
 
+.contact-heading {
+    text-align: center;
+    padding-left: 0;
+}
+
+.contact-heading::before {
+    display: none;
+}
+
 .contact-links {
     display: flex;
     flex-direction: column;
     gap: 12px;
     width: 220px;
-    margin: 20px auto;
+    margin: 24px auto 0;
 }
 
 .contact-item {
